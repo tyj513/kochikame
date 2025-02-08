@@ -20,9 +20,9 @@ handler = WebhookHandler(LINE_CHANNEL_SECRET)
 
 # 梗圖資料庫
 image_database = {
-    "001": "1.jpg",
-    "002": "2.jpg",
-    "003": "3.jpg",
+    "001": "https://github.com/tyj513/kochikame/raw/master/1.jpg",
+    "002": "https://github.com/tyj513/kochikame/raw/master/2.jpg",
+    "003": "https://github.com/tyj513/kochikame/raw/master/3.jpg",
 }
 
 # 神奇海螺回應
