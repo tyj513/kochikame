@@ -377,6 +377,14 @@ image_data = []
 # 錯誤訊息
 error_message = "找不到圖片"
 
+
+def get_image_url(number):
+    global image_data
+    for entry in image_data:
+        if number == entry['image_name']:
+            return entry.get('url', None)
+    return None
+
 # 在應用啟動時加載JSON數據
 def load_image_data():
     global image_data
@@ -393,7 +401,7 @@ def load_image_data():
 
 # 檢查圖片名稱格式 (例如 e00087)
 def validate_image_number(message):
-    pattern = r"^e\d{5}$"
+    pattern = r"^e\d+$"
     return re.match(pattern, message) is not None
 
 # 從內存中查找圖片數據
@@ -410,89 +418,16 @@ def search_by_keyword(keyword):
     result = []
     for item in image_data:
         if keyword in item['text']:
-            result.append(f"【{item['episode']}_{item['image_index']}】{item['text']} (編號:{item['image_name']})")
+            result.append(f"【編號:{item['image_name']}】{item['text']})")
     return result
+                          
 
 # 隨機抽取一個圖片
-def random_image():
-    global image_data
-    if not image_data:
-        return None
-    return random.choice(image_data)
-
-# 創建包含圖片和兩個按鈕的Flex Message
-def create_image_with_buttons(image_data):
-    img_url = image_data.get("url", "")
-    image_name = image_data.get("image_name", "")
-
-    flex_content = {
-        "type": "bubble",
-        "hero": {
-            "type": "image",
-            "url": img_url,
-            "size": "full",
-            "aspectRatio": "16:9",
-            "aspectMode": "cover"
-        },
-        "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "spacing": "md",
-            "contents": [
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "抽", "text": "抽"},
-                    "style": "primary",
-                    "height": "sm"
-                },
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "集數資訊", "text": f"info:{image_name}"},
-                    "style": "secondary",
-                    "height": "sm"
-                }
-            ]
-        }
-    }
-
-    return FlexSendMessage(alt_text="圖片", contents=flex_content)
-
-# 創建圖片詳細信息的Flex Message
-def create_episode_info_message(image_data):
-    episode_number = image_data.get("episode", "未知")
-    episode_title = episode_titles.get(episode_number, "未知集數")
-    image_name = image_data.get("image_name", "")
-    
-    flex_content = {
-        "type": "bubble",
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-                {"type": "text", "text": f"編號: {image_name}", "weight": "bold", "size": "md"},
-                {"type": "text", "text": f"集數: 第{episode_number}集", "size": "md", "margin": "md"},
-                {"type": "text", "text": f"標題: {episode_title}", "size": "md", "margin": "md"}
-            ]
-        },
-        "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "抽", "text": "抽"},
-                    "style": "primary"
-                },
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "選單", "text": "menu"},
-                    "style": "secondary"
-                }
-            ]
-        }
-    }
-
-    return FlexSendMessage(alt_text="集數資訊", contents=flex_content)
+def create_quick_reply():
+    return QuickReply(items=[
+        QuickReplyButton(action=MessageAction(label="抽", text="抽")),
+        QuickReplyButton(action=MessageAction(label="選單", text="menu"))
+    ])
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -509,10 +444,29 @@ def handle_message(event):
     message = event.message.text.strip()
 
     # 處理「menu」指令
+# 從內存中查找圖片數據並返回URL
+def get_image_url(number):
+    global image_data
+    for entry in image_data:
+        if number == entry['image_name']:
+            return entry.get('url', None)
+    return None
+# 隨機抽取一個圖片
+def random_image():
+    global image_data
+    if not image_data:
+        return None
+    return random.choice(image_data)
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    message = event.message.text.strip()
+
+    # 處理「menu」指令
     if message.lower() == "menu":
         reply_message = "歡迎使用壽限無壽限無五卻之麵粉君之烏龍派出所動畫機器人！\n" \
                         "指令列表：\n" \
-                        "- 輸入編號（例如 e00087）查看圖片\n" \
+                        "- 輸入編號（例如 e00087 或 e1000）查看圖片\n" \
                         "- 輸入關鍵字搜尋圖片名稱\n" \
                         "- 輸入「抽」隨機抽取一張圖片"
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
@@ -522,8 +476,20 @@ def handle_message(event):
     if message == "抽":
         random_img = random_image()
         if random_img:
-            flex_message = create_image_with_buttons(random_img)
-            line_bot_api.reply_message(event.reply_token, flex_message)
+            img_url = random_img.get("url", "")
+            img_name = random_img.get("image_name", "")
+            
+            # 直接發送URL作為文字，附帶Quick Reply按鈕
+            text_message = TextSendMessage(
+                text=img_url,
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(action=MessageAction(label="抽", text="抽")),
+                        QuickReplyButton(action=MessageAction(label="集數資訊", text=f"info:{img_name}"))
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, text_message)
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
         return
@@ -533,18 +499,42 @@ def handle_message(event):
         image_number = message.replace("info:", "")
         img_data = search_image_by_number(image_number)
         if img_data:
-            info_message = create_episode_info_message(img_data)
-            line_bot_api.reply_message(event.reply_token, info_message)
+            episode_number = img_data.get("episode", "未知")
+            episode_title = episode_titles.get(episode_number, "未知集數")
+            image_name = img_data.get("image_name", "")
+            
+            reply_message = f"編號: {image_name}\n集數: 第{episode_number}集\n標題: {episode_title}"
+            
+            # 添加 Quick Reply 按鈕到文字訊息
+            text_message = TextSendMessage(
+                text=reply_message,
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(action=MessageAction(label="抽", text="抽")),
+                        QuickReplyButton(action=MessageAction(label="選單", text="menu"))
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, text_message)
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片資訊。"))
         return
 
-    # 處理編號查詢 - 直接顯示圖片和按鈕
+    # 處理編號查詢 - 直接回傳URL文字
     if validate_image_number(message):
-        img_data = search_image_by_number(message)
-        if img_data:
-            flex_message = create_image_with_buttons(img_data)
-            line_bot_api.reply_message(event.reply_token, flex_message)
+        img_url = get_image_url(message)
+        if img_url:
+            # 直接發送URL作為文字，附帶Quick Reply按鈕
+            text_message = TextSendMessage(
+                text=img_url,
+                quick_reply=QuickReply(
+                    items=[
+                        QuickReplyButton(action=MessageAction(label="抽", text="抽")),
+                        QuickReplyButton(action=MessageAction(label="集數資訊", text=f"info:{message}"))
+                    ]
+                )
+            )
+            line_bot_api.reply_message(event.reply_token, text_message)
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片。"))
         return
@@ -552,14 +542,12 @@ def handle_message(event):
     # 處理關鍵字搜尋
     search_result = search_by_keyword(message)
     if search_result:  
-            reply_message = "\n".join(search_result)
+        reply_message = "\n".join(search_result)
     else:
         reply_message = "找不到符合的圖片名稱。"
     
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
-
-# 啟動應用時加載圖片數據
-load_image_data()
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+
+ 
