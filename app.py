@@ -537,21 +537,23 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片資訊。"))
         return
-    
+        
     elif validate_image_number(message):
         img_data = search_image_by_number(message)
         if img_data:
             quick_reply = create_quick_reply()
             line_bot_api.reply_message(
                 event.reply_token,
-                TextSendMessage(
-                    text=img_data['url'],
+                ImageSendMessage(
+                    original_content_url=img_data['url'],
+                    preview_image_url=img_data['url'],
                     quick_reply=quick_reply
                 )
             )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片。"))
         return
+
 
  
     else:
