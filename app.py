@@ -364,123 +364,200 @@ episode_titles = {
 
 # 表情符號的 Unicode 編碼與中文的映射字典
 emoji_unicode_to_chinese = {
-    # Facial expressions
-    'U+1F600': '開心',       # 😀 Grinning face
-    'U+1F601': '燦笑',       # 😁 Grinning face with smiling eyes
-    'U+1F602': '笑到哭',     # 😂 Face with tears of joy
-    'U+1F603': '大笑',       # 😃 Smiling face with open mouth
-    'U+1F604': '笑臉',       # 😄 Smiling face with open mouth and smiling eyes
-    'U+1F605': '冒汗笑',     # 😅 Smiling face with open mouth and cold sweat
-    'U+1F606': '大笑眯眼',   # 😆 Smiling face with open mouth and tightly-closed eyes
-    'U+1F607': '天使',       # 😇 Smiling face with halo
-    'U+1F608': '惡魔',       # 😈 Smiling face with horns
-    'U+1F609': '眨眼',       # 😉 Winking face
-    'U+1F60A': '微笑',       # 😊 Smiling face with smiling eyes
-    'U+1F60B': '饞',         # 😋 Face savoring delicious food
-    'U+1F60C': '放鬆',       # 😌 Relieved face
-    'U+1F60D': '愛慕',       # 😍 Smiling face with heart-shaped eyes
-    'U+1F60E': '酷',         # 😎 Smiling face with sunglasses
-    'U+1F60F': '壞笑',       # 😏 Smirking face
-    'U+1F610': '平靜',       # 😐 Neutral face
-    'U+1F611': '面無表情',   # 😑 Expressionless face
-    'U+1F612': '不高興',     # 😒 Unamused face
-    'U+1F613': '冒汗',       # 😓 Face with cold sweat
-    'U+1F614': '沉思',       # 😔 Pensive face
-    'U+1F615': '困惑',       # 😕 Confused face
-    'U+1F616': '困擾',       # 😖 Confounded face
-    'U+1F617': '親親',       # 😗 Kissing face
-    'U+1F618': '飛吻',       # 😘 Face throwing a kiss
+  
+    'U+1F600': '開心',  # 😀 Grinning face
+    'U+1F601': '笑',  # 😁 Grinning face with smiling eyes
+    'U+1F602': '笑',  # 😂 Face with tears of joy
+    'U+1F603': '大笑',  # 😃 Smiling face with open mouth
+    'U+1F604': '笑',  # 😄 Smiling face with open mouth and smiling eyes
+    'U+1F606': '笑',  # 😆 Smiling face with open mouth and tightly-closed eyes
+    'U+1F607': '天使',  # 😇 Smiling face with halo
+    'U+1F608': '惡魔',  # 😈 Smiling face with horns
+    'U+1F609': '眨眼',  # 😉 Winking face
+    'U+1F60A': '笑',  # 😊 Smiling face with smiling eyes
+    'U+1F60B': '好吃',  # 😋 Face savoring delicious food
+    'U+1F60C': '放鬆',  # 😌 Relieved face
+    'U+1F60E': '酷',  # 😎 Smiling face with sunglasses
 
-    # Gestures and body parts
-    'U+1F44D': '大拇指',     # 👍 Thumbs up sign
-    'U+1F44E': '拇指向下',   # 👎 Thumbs down sign
-    'U+1F44F': '鼓掌',       # 👏 Clapping hands sign
-    'U+1F44B': '揮手',       # 👋 Waving hand sign
-    'U+1F44C': '好的',       # 👌 OK hand sign
-    'U+1F44A': '拳頭',       # 👊 Fisted hand sign
-    'U+1F64F': '祈禱',       # 🙏 Person with folded hands
-    'U+1F4AA': '肌肉',       # 💪 Flexed biceps
-    'U+1F48B': '口紅印',     # 💋 Kiss mark
-    'U+1F48D': '戒指',       # 💍 Ring
+    'U+1F617': '親',  # 😗 Kissing face
+    'U+1F618': '親',  # 😘 Face throwing a kiss
+    'U+1F62A': '打哈欠',  # 😪 Yawning face
+    'U+1F62D': '哭',  # 😭 Loudly crying face
+    'U+1F622': '淚',  # 😢 Crying face
+    'U+1F621': '生氣',  # 😡 Pouting face
+    'U+1F624': '生氣',  # 😤 Face with steam from nose
+    
+    'U+1F633': '臉紅',  # 😳 Flushed face
+   
+    'U+1F61E': '失望',  # 😞 Disappointed face
 
-    # Heart symbols
-    'U+2764': '愛心',        # ❤️ Heavy black heart
-    'U+1F49B': '黃心',       # 💛 Yellow heart
-    'U+1F49A': '綠心',       # 💚 Green heart
-    'U+1F499': '藍心',       # 💙 Blue heart
-    'U+1F49C': '紫心',       # 💜 Purple heart
-    'U+1F49D': '禮物心',     # 💝 Heart with ribbon
-    'U+1F496': '閃亮愛心',   # 💖 Sparkling heart
-    'U+1F494': '碎心',       # 💔 Broken heart
-    'U+1F493': '悸動',       # 💓 Beating heart
-    'U+1F497': '心動',       # 💗 Growing heart
-    'U+1F495': '兩顆心',     # 💕 Two hearts
-    'U+1F498': '心飛箭',     # 💘 Heart with arrow
-    'U+1F49E': '旋轉愛心',   # 💞 Revolving hearts
-    'U+1F49F': '愛心裝飾',   # 💟 Heart decoration
-   # 日常物品
-    'U+1F4F1': '手機',        # 📱 Mobile phone
-    'U+1F4BB': '筆電',        # 💻 Laptop computer
-    'U+1F4F7': '相機',        # 📷 Camera
-    'U+1F4E6': '包裹',        # 📦 Package
-    'U+1F4D6': '書本',        # 📖 Open book
-    'U+1F4DA': '書籍',        # 📚 Books
-    'U+1F4DD': '筆記',        # 📝 Memo
-    'U+1F4A1': '燈泡',        # 💡 Light bulb
-    'U+1F50D': '放大鏡',      # 🔍 Left-pointing magnifying glass
-    'U+1F511': '鑰匙',        # 🔑 Key
-    'U+1F513': '開鎖',        # 🔓 Open lock
-    'U+1F512': '鎖',          # 🔒 Lock
     
-    # 飲食物品
-    'U+1F354': '漢堡',        # 🍔 Hamburger
-    'U+1F355': '披薩',        # 🍕 Pizza
-    'U+1F35F': '薯條',        # 🍟 French fries
-    'U+1F363': '壽司',        # 🍣 Sushi
-    'U+1F366': '冰淇淋',      # 🍦 Soft ice cream
-    'U+1F369': '甜甜圈',      # 🍩 Doughnut
-    'U+1F36A': '餅乾',        # 🍪 Cookie
-    'U+1F382': '蛋糕',        # 🎂 Birthday cake
-    'U+1F37A': '啤酒',        # 🍺 Beer mug
-    'U+1F377': '紅酒',        # 🍷 Wine glass
-    'U+1F375': '茶',          # 🍵 Teacup without handle
-    'U+2615': '咖啡',         # ☕ Hot beverage
-    'U+1F35B': '咖哩飯',      # 🍛 Curry and rice
+    
+    'U+1F34E': '蘋果',
+'U+1F34A': '橘子',
+'U+1F34C': '香蕉',
+'U+1F349': '西瓜',
+'U+1F347': '葡萄',
+'U+1F353': '草莓',
+'U+1F352': '櫻桃',
+'U+1F34D': '鳳梨',
+'U+1F96D': '芒果',
+'U+1F95D': '奇異果',
+'U+1F351': '水蜜桃',
+'U+1F346': '茄子',
+'U+1F955': '胡蘿蔔',
+'U+1F33D': '玉米',
+'U+1F954': '馬鈴薯',
+'U+1F360': '地瓜',
+'U+1F952': '黃瓜',
+'U+1F96C': '青菜',
+'U+1F344': '蘑菇',
+'U+1F95C': '花生',
+'U+1F35E': '麵包',
+'U+1F956': '麵包',
+'U+1F96F': '貝果',
+'U+1F9C0': '起司',
+'U+1F355': '披薩',
+'U+1F354': '漢堡',
+'U+1F32D': '熱狗',
+'U+1F96A': '三明治',
+'U+1F32E': '墨西哥捲餅',
+'U+1F359': '飯糰',
+'U+1F363': '壽司',
+'U+1F35B': '咖哩飯',
+'U+1F35C': '拉麵',
+'U+1F95F': '餃子',
+'U+1F362': '串燒',
+'U+1F382': '蛋糕',
+'U+1F369': '甜甜圈',
+'U+1F36A': '餅乾',
+'U+1F36B': '巧克力',
 
-    # 交通工具
-    'U+1F697': '汽車',        # 🚗 Automobile
-    'U+1F695': '計程車',      # 🚕 Taxi
-    'U+1F699': '休旅車',      # 🚙 Recreational vehicle
-    'U+1F68C': '公車',        # 🚌 Bus
-    'U+1F682': '火車',        # 🚂 Locomotive
-    'U+1F680': '火箭',        # 🚀 Rocket
-    'U+2708': '飛機',         # ✈️ Airplane
-    'U+1F6A2': '輪船',        # 🚢 Ship
-    'U+1F6B2': '自行車',      # 🚲 Bicycle
-    'U+1F3CD': '機車',        # 🏍️ Motorcycle
-    
-    # 運動和娛樂物品
-    'U+26BD': '足球',         # ⚽ Soccer ball
-    'U+1F3C0': '籃球',        # 🏀 Basketball
-    'U+1F3BE': '網球',        # 🎾 Tennis racquet and ball
-    'U+1F3B8': '吉他',        # 🎸 Guitar
-    'U+1F3B5': '音樂',        # 🎵 Musical note
-    'U+1F3A4': '麥克風',      # 🎤 Microphone
-    'U+1F3AE': '遊戲機',      # 🎮 Video game
-    'U+1F3A8': '調色盤',      # 🎨 Artist palette
-    'U+1F3AC': '電影',        # 🎬 Clapper board
-    'U+1F39F': '票',          # 🎟️ Admission tickets
-    
-    # 自然物品
-    'U+1F490': '花',        # 💐 Bouquet
-    'U+1F338': '櫻花',        # 🌸 Cherry blossom
-    'U+1F33A': '玫瑰',        # 🌺 Hibiscus
-    'U+1F33B': '向日葵',      # 🌻 Sunflower
-    'U+1F332': '樹',      # 🌲 Evergreen tree
-    'U+1F334': '椰子樹',      # 🌴 Palm tree
-    'U+1F30D': '地球',        # 🌍 Earth globe Europe-Africa
-    'U+1F31F': '星星',        # 🌟 Glowing star
-    'U+1F31D': '月亮',      # 🌝 Full moon with face
+'U+1F4F1': '手機',
+'U+1F4DE': '電話',
+'U+1F4BB': '電腦',
+'U+1F5A5': '電腦',
+'U+2328': '鍵盤',
+'U+1F5B1': '滑鼠',
+'U+1F5A8': '印表機',
+'U+1F579': '遊戲',
+'U+1F4F7': '相機',
+'U+1F3A5': '攝影機',
+'U+1F4FA': '電視',
+'U+1F4FB': '收音機',
+'U+23F0': '鬧鐘',
+'U+1F4A1': '燈',
+'U+1F526': '手電筒',
+'U+1F50B': '電池',
+'U+1F50C': '插頭',
+'U+1F4E1': '天線',
+'U+1F399': '麥克風',
+'U+1F4E0': '傳真',
+'U+1F511': '鑰匙',
+'U+1F6AA': '門',
+'U+1F6CF': '床',
+'U+1F6CB': '沙發',
+'U+1F6BD': '馬桶',
+'U+1F6BF': '淋浴間',
+'U+1F6C1': '浴缸',
+'U+1FA91': '椅子',
+'U+1F5BC': '畫框',
+'U+1F4DA': '書籍',
+'U+1F4D6': '書',
+'U+2702': '剪刀',
+'U+1F58A': '原子筆',
+'U+1F58D': '蠟筆',
+'U+1F4CE': '迴紋針',
+'U+1F4CF': '尺',
+
+'U+1F697': '汽車',
+'U+1F695': '計程車',
+'U+1F699': '休旅車',
+'U+1F68C': '公車',
+'U+1F68E': '無軌電車',
+'U+1F3CE': '賽車',
+'U+1F693': '警車',
+'U+1F691': '救護車',
+'U+1F692': '消防車',
+'U+1F690': '廂型車',
+'U+1F69A': '貨車',
+'U+1F69B': '拖車卡車',
+'U+1F69C': '拖拉機',
+'U+1F6B2': '腳踏車',
+'U+1F6F5': '速克達',
+'U+1F3CD': '摩托車',
+'U+1F682': '火車',
+'U+1F686': '火車',
+'U+1F687': '地鐵',
+'U+1F69D': '車',
+'U+1F680': '火箭',
+'U+2708': '飛機',
+'U+1F6E9': '飛機',
+'U+1F6EB': '飛機',
+'U+1F6EC': '飛機',
+'U+26F5': '帆船',
+'U+1F6A4': '快艇',
+'U+1F6F3': '客輪',
+'U+26F4': '渡輪',
+'U+1F6A2': '輪船',
+'U+2693': '錨',
+'U+1F5FA': '地圖',
+'U+1F5FF': '石像',
+'U+1F5FD': '自由女神像',
+'U+1F5FC': '東京鐵塔',
+'U+1F3F0': '城堡',
+'U+1F3EF': '城堡',
+'U+1F309': '夜晚',
+'U+1F306': '黃昏',
+
+'U+26BD': '足球',
+'U+1F3C0': '籃球',
+'U+1F3C8': '橄欖球',
+'U+26BE': '棒球',
+'U+1F3BE': '網球',
+'U+1F3D0': '排球',
+'U+1F3C9': '橄欖球',
+'U+1F3B1': '撞球',
+'U+1F3D3': '桌球',
+'U+1F3F8': '羽毛球',
+'U+1F94A': '拳擊手套',
+'U+1F94B': '柔道',
+'U+26F8': '溜冰',
+'U+1F3BF': '滑雪',
+'U+1F3C4': '衝浪',
+'U+1F6B4': '腳踏車',
+'U+1F3C7': '賽馬',
+'U+1F3CA': '游泳',
+'U+1F3CB': '舉重',
+'U+1F3A4': '麥克風',
+'U+1F3A7': '耳機',
+'U+1F3BC': '五線譜',
+'U+1F3B9': '鋼琴',
+'U+1F941': '鼓',
+'U+1F3B7': '薩克斯風',
+'U+1F3BA': '小號',
+'U+1F3B8': '吉他',
+'U+1F3BB': '小提琴',
+'U+1F579': '搖桿',
+'U+1F3B2': '骰子',
+'U+1F004': '麻將',
+'U+265F': '西洋棋',
+'U+1F3C6': '獎盃',
+'U+1F947': '金牌',
+'U+1F948': '銀牌',
+'U+1F949': '銅牌',
+'U+1F3AD': '面具',
+
+ 'U+1F468': '老師',
+'U+1F469': '老師',
+'U+1F46E': '警察',
+'U+1F468': '醫生',
+'U+1F9D1 200D 2695 FE0F': '護士',
+'U+1F477': '工人',
+'U+1F473': '清潔工',
+'U+1F475': '小丑', 
+'U+1F9D1 200D 1F393': '學生'
+
 }
 app = Flask(__name__)
  
