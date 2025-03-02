@@ -283,7 +283,7 @@ episode_titles = {
     "257": "利用療傷系賺大錢！",
     "258": "難纏的御所河原大爺",
     "259": "騙人的兩津和被騙的兩津",
-    "260": "黃金傳說大決戰！節約能源大作戰",
+    "260": "節約能源大作戰",
     "261": "兩津的狗兒生活",
     "262": "下町澡堂的壁畫",
     "263": "兩津撿到寶！秘密整人實況",
@@ -404,13 +404,18 @@ def search_image_by_number(number):
     return None
  
 # 搜尋圖片名稱與對應編號
-def search_by_keyword(keyword):
+def search_by_keyword(keyword, strict=False):
     global image_data
     result = []
     for item in image_data:
-        if keyword in item['text']:
-            result.append(f"【{item['image_name']}】{item['text']}")
+        if strict:
+            if keyword == item['text']:
+                result.append(f"【{item['image_name']}】{item['text']}")
+        else:
+            if keyword in item['text']:
+                result.append(f"【{item['image_name']}】{item['text']}")
     return result
+
 
 
 # 隨機抽取一個圖片
@@ -453,11 +458,12 @@ def create_flex_message(image_data):
     return FlexSendMessage(alt_text="圖片資訊", contents=flex_content)
 
 # 創建Quick Reply按鈕
-def create_quick_reply():
-    return QuickReply(items=[
-        QuickReplyButton(action=MessageAction(label="抽", text="抽")),
-        QuickReplyButton(action=MessageAction(label="選單", text="menu"))
-    ])
+def create_quick_reply(buttons):
+    items = []
+    for label, text in buttons:
+        items.append(QuickReplyButton(action=MessageAction(label=label, text=text)))
+    return QuickReply(items=items)
+
 
 # 創建圖片預覽的Flex Message
 def create_preview_flex_message(image_data):
@@ -530,18 +536,39 @@ def handle_message(event):
     
     elif message.startswith("info:"):
         image_number = message.replace("info:", "")
+        img_num = int(image_number[1:])  # 把 e42574 取數字部分
+        prev_number = f"e{img_num - 1:05d}"
+        next_number = f"e{img_num + 1:05d}"
+        
         img_data = search_image_by_number(image_number)
         if img_data:
+            quick_reply = create_quick_reply([
+                ("上一張", prev_number),
+                ("下一張", next_number),
+                ("抽", "抽"),
+                ("不顯示集數資訊", image_number)
+            ])
             flex_message = create_flex_message(img_data)
-            line_bot_api.reply_message(event.reply_token, flex_message)
+            line_bot_api.reply_message(
+                event.reply_token,
+                [flex_message, TextSendMessage(text="請選擇操作：", quick_reply=quick_reply)]
+            )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片資訊。"))
         return
-        
+
+
+
     elif validate_image_number(message):
         img_data = search_image_by_number(message)
         if img_data:
-            quick_reply = create_quick_reply()
+            image_number = img_data['image_name']
+            quick_reply = create_quick_reply([
+                ("上一張", f"prev:{image_number}"),
+                ("下一張", f"next:{image_number}"),
+                ("抽", "抽"),
+                ("集數資訊", f"info:{image_number}")
+            ])
             line_bot_api.reply_message(
                 event.reply_token,
                 ImageSendMessage(
@@ -555,8 +582,13 @@ def handle_message(event):
         return
 
 
- 
+    elif message.startswith("strict:"):
+        keyword = message.replace("strict:", "").strip()
+        search_result = search_by_keyword(keyword, strict=True)
+
+        
     else:
+  
         # 關鍵字搜尋
         search_result = search_by_keyword(message)
         if search_result:  
