@@ -20,6 +20,9 @@ LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
 LINE_CHANNEL_SECRET = os.getenv("LINE_CHANNEL_SECRET")
 
 app = Flask(__name__)
+ 
+line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
+handler = WebhookHandler(LINE_CHANNEL_SECRET)
 episode_titles = {
     "1": "兩津警員出現!?",
     "2": "從天而降的新進警員",
@@ -365,9 +368,6 @@ episode_titles = {
 } 
 
 
-line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
-handler = WebhookHandler(LINE_CHANNEL_SECRET)
-
 # JSON文件路徑（假設與app.py在同一目錄）
 pic_database_path = 'merged_output_with_url.json'
 
@@ -409,8 +409,9 @@ def search_by_keyword(keyword):
     result = []
     for item in image_data:
         if keyword in item['text']:
-            result.append(f"【{item['episode']}_{item['image_index']}】{item['text']} (編號:{item['image_name']})")
+            result.append(f"【{item['image_name']}】{item['text']}")
     return result
+
 
 # 隨機抽取一個圖片
 def random_image():
@@ -442,26 +443,11 @@ def create_flex_message(image_data):
             "contents": [
                 {"type": "text", "text": f"編號: {image_name}", "weight": "bold", "size": "md"},
                 {"type": "text", "text": f"集數: 第{episode_number}集", "size": "sm", "color": "#555555"},
-                {"type": "text", "text": f"標題: {episode_title}", "size": "sm", "color": "#555555"},
-                {"type": "text", "text": f"說明: {image_text}", "wrap": True, "size": "sm", "color": "#777777"}
-            ]
-        },
-        "footer": {
-            "type": "box",
-            "layout": "horizontal",
-            "contents": [
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "抽", "text": "抽"},
-                    "style": "primary"
-                },
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "選單", "text": "menu"},
-                    "style": "secondary"
-                }
+                {"type": "text", "text": f"標題: {episode_title}", "weight": "bold","size": "sm", "color": "#555555"},
+                {"type": "text", "text": f"說明: {image_text}", "wrap": True, "size": "sm", "color": "#555555"}
             ]
         }
+    
     }
 
     return FlexSendMessage(alt_text="圖片資訊", contents=flex_content)
@@ -495,17 +481,7 @@ def create_preview_flex_message(image_data):
                     "type": "button",
                     "action": {"type": "message", "label": "顯示資訊", "text": f"info:{image_name}"},
                     "style": "primary"
-                },
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "抽", "text": "抽"},
-                    "style": "secondary"
-                },
-                {
-                    "type": "button",
-                    "action": {"type": "message", "label": "選單", "text": "menu"},
-                    "style": "secondary"
-                }
+                }       
             ]
         }
     }
@@ -536,8 +512,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
         return
 
-    # 處理「抽」指令
-    if message == "抽":
+    elif message == "抽":
         random_img = random_image()
         if random_img:
             quick_reply = create_quick_reply()
@@ -553,8 +528,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
         return
     
-    # 處理info:請求
-    if message.startswith("info:"):
+    elif message.startswith("info:"):
         image_number = message.replace("info:", "")
         img_data = search_image_by_number(image_number)
         if img_data:
@@ -563,25 +537,39 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片資訊。"))
         return
-
-    # 處理編號查詢
-    if validate_image_number(message):
+    
+    elif validate_image_number(message):
         img_data = search_image_by_number(message)
         if img_data:
-            flex_message = create_preview_flex_message(img_data)
-            line_bot_api.reply_message(event.reply_token, flex_message)
+            quick_reply = create_quick_reply()
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(
+                    text=img_data['url'],
+                    quick_reply=quick_reply
+                )
+            )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片。"))
         return
 
-    # 處理關鍵字搜尋
-    search_result = search_by_keyword(message)
-    if search_result:  
-        reply_message = "\n".join(search_result)
+ 
     else:
-        reply_message = "找不到符合的圖片名稱。"
-    
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+        # 關鍵字搜尋
+        search_result = search_by_keyword(message)
+        if search_result:  
+            reply_message = "\n".join(search_result)
+        else:
+            reply_message = "找不到符合的圖片名稱。"
+
+        quick_reply = create_quick_reply()
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(
+                text=reply_message,
+                quick_reply=quick_reply
+            )
+        )
 
 # 啟動應用時加載圖片數據
 load_image_data()
