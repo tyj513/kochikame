@@ -882,8 +882,11 @@ def handle_message(event):
             else:
                 reply_message = "我不認識這個表情符號！"
         else:
+            
             # Handle regular character case
-            reply_message = "這是一個字。"
+            search_result = search_by_keyword(message)
+            if message==search_result:  
+                reply_message = "\n".join(search_result)
         
         quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
         line_bot_api.reply_message(
