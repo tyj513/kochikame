@@ -631,13 +631,21 @@ def random_image():
         return None
     return random.choice(image_data)
 
-# 創建圖片詳細信息的Flex Message
+# 創建圖片詳細信息的Flex Message 
 def create_flex_message(image_data):
-    episode_number = str(image_data.get("episode", "未知")) 
+    episode_number = str(image_data.get("episode", "未知"))
     episode_title = episode_titles.get(episode_number, "未知集數")
+    print(f"🔍 檢查 episode_titles: {episode_titles}")  # 確保有資料
+    print(f"🔍 解析的 episode_number: {episode_number}")  # 確保是字串
+    print(f"🔍 查找的標題: {episode_titles.get(episode_number, '未知集數')}")  # 測試是否能匹配
+
     image_name = image_data.get("image_name", "")
     image_text = image_data.get("text", "")
     img_url = image_data.get("url", "")
+    print(f"📌 編號: {image_name}")
+    print(f"📌 集數: 第{episode_number}集")
+    print(f"📌 標題: {episode_title}")  # 這行應該要顯示正確標題
+    print(f"📌 說明: {image_text}")
 
     flex_content = {
         "type": "bubble",
