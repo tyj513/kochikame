@@ -11,6 +11,8 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 import os
 from dotenv import load_dotenv
+import unicodedata
+
 
 # 載入 .env 檔案
 load_dotenv()
@@ -592,6 +594,9 @@ def validate_image_number(message):
     pattern = r"^[Ee]\d{1,5}$"  # E 或 e 開頭，後面 1~5 位數字
     return re.match(pattern, message) is not None
 
+def is_emoji(message):
+    # Check if the character is an emoji
+    return unicodedata.category(message) == 'So'
 def normalize_image_number(message):
     pattern = r"^[Ee](\d{1,5})$"  # E 或 e 開頭，後面 1~5 位數字
     match = re.match(pattern, message)
@@ -864,30 +869,23 @@ def handle_message(event):
         
 # Handle single emoji input
     elif len(message) == 1:
-        # Convert emoji to Unicode representation
-        unicode_str = f'U+{ord(message[0]):X}'
-        
-        # Check if this emoji is in our dictionary
-        if unicode_str in emoji_unicode_to_chinese:
-            # Get the corresponding Chinese text
-            chinese_meaning = emoji_unicode_to_chinese[unicode_str]
-            
-            # Instead of explaining the emoji, directly process the Chinese text
-            # as if the user had sent that text
-            search_result = search_by_keyword(chinese_meaning, strict=False)
-            
-            if search_result: 
-                reply_message = "\n".join(search_result)
+        if is_emoji(message[0]):
+            # Handle emoji case
+            unicode_str = f'U+{ord(message[0]):X}'
+            if unicode_str in emoji_unicode_to_chinese:
+                chinese_meaning = emoji_unicode_to_chinese[unicode_str]
+                search_result = search_by_keyword(chinese_meaning, strict=False)
+                if search_result: 
+                    reply_message = "\n".join(search_result)
+                else:
+                    reply_message = "找不到符合的圖片名稱。"
             else:
-                reply_message = "找不到符合的圖片名稱。"
+                reply_message = "我不認識這個表情符號！"
         else:
-            reply_message = "我不認識這個表情符號！"
+            # Handle regular character case
+            reply_message = "這是一個字。"
         
-        quick_reply = create_quick_reply([
-            ("選單", "menu"),
-            ("抽圖", "抽")
-        ])
-        
+        quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(
