@@ -633,7 +633,7 @@ def random_image():
 
 # 創建圖片詳細信息的Flex Message
 def create_flex_message(image_data):
-    episode_number = image_data.get("episode", "未知")
+    episode_number = str(image_data.get("episode", "未知")) 
     episode_title = episode_titles.get(episode_number, "未知集數")
     image_name = image_data.get("image_name", "")
     image_text = image_data.get("text", "")
