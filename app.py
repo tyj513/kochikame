@@ -591,7 +591,7 @@ def load_image_data():
 
 # 檢查圖片名稱格式 (例如 e00087)
 def validate_image_number(message):
-    pattern = r"^e\d$"
+    pattern = r"^[Ee]\d{1,5}$"  # E 或 e 開頭，後面 1~5 位數字
     return re.match(pattern, message) is not None
 
 # 從內存中查找圖片數據
