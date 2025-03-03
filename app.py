@@ -280,7 +280,7 @@ episode_titles = {
     "257": "利用療傷系賺大錢！",
     "258": "難纏的御所河原大爺",
     "259": "騙人的兩津和被騙的兩津",
-    "260": "黃金傳說大決戰！節約能源大作戰",
+    "260": "節約能源大作戰",
     "261": "兩津的狗兒生活",
     "262": "下町澡堂的壁畫",
     "263": "兩津撿到寶！秘密整人實況",
@@ -881,13 +881,16 @@ def handle_message(event):
                     reply_message = "找不到符合的圖片名稱。"
             else:
                 reply_message = "我不認識這個表情符號！"
+
+
+ 
         else:
-            
             # Handle regular character case
             search_result = search_by_keyword(message)
-            if message==search_result:  
+            if message == search_result:  
                 reply_message = "\n".join(search_result)
-        
+
+ 
         quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
         line_bot_api.reply_message(
             event.reply_token,
