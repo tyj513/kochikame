@@ -570,9 +570,7 @@ pic_database_path = 'merged_output_with_url.json'
 # 全局變數存儲加載的數據
 image_data = []
 
-# 集數標題，需要加入完整的集數對應標題
-episode_titles = {}  # 若沒有完整集數資料，可保持為空字典
-
+  
 # 錯誤訊息
 error_message = "找不到圖片"
 # 在應用啟動時加載JSON數據
