@@ -868,6 +868,7 @@ def handle_message(event):
         return
         
 # Handle single emoji input
+# Handle single emoji input
     elif len(message) == 1:
         if is_emoji(message[0]):
             # Handle emoji case
@@ -881,16 +882,15 @@ def handle_message(event):
                     reply_message = "找不到符合的圖片名稱。"
             else:
                 reply_message = "我不認識這個表情符號！"
-
-
- 
         else:
             # Handle regular character case
             search_result = search_by_keyword(message)
-            if message == search_result:  
+            if search_result:  
                 reply_message = "\n".join(search_result)
-
- 
+            else:
+                # Add this line to initialize reply_message when search_result is empty
+                reply_message = "找不到符合的圖片名稱。"
+        
         quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
         line_bot_api.reply_message(
             event.reply_token,
@@ -899,7 +899,9 @@ def handle_message(event):
                 quick_reply=quick_reply
             )
         )
-        return
+        return  
+
+    
     # 關鍵字搜尋（默認行為）
     else:
         search_result = search_by_keyword(message)
