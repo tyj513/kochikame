@@ -594,6 +594,15 @@ def validate_image_number(message):
     pattern = r"^[Ee]\d{1,5}$"  # E 或 e 開頭，後面 1~5 位數字
     return re.match(pattern, message) is not None
 
+def normalize_image_number(message):
+    pattern = r"^[Ee](\d{1,5})$"  # E 或 e 開頭，後面 1~5 位數字
+    match = re.match(pattern, message)
+    if match:
+        num = int(match.group(1))  # 轉換為數字，去掉前導零
+        return f"e{num:05d}"  # 轉換為 e00008 格式
+    return None
+
+
 # 從內存中查找圖片數據
 def search_image_by_number(number):
     global image_data
@@ -802,13 +811,13 @@ def handle_message(event):
 
     # 處理圖片編號請求
     elif validate_image_number(message):
-        img_data = search_image_by_number(message)
+        normalized_message = normalize_image_number(message)  # 轉換 e8 -> e00008
+        img_data = search_image_by_number(normalized_message)
         if img_data:
-            image_number = img_data['image_name']
             quick_reply = create_quick_reply([
-                ("上一張", f"prev:{image_number}"),
-                ("下一張", f"next:{image_number}"),
-                ("集數資訊", f"info:{image_number}"),
+                ("上一張", f"{normalize_image_number(f'e{int(normalized_message[1:]) - 1}')}" if int(normalized_message[1:]) > 1 else "e00001"),
+                ("下一張", f"{normalize_image_number(f'e{int(normalized_message[1:]) + 1}')}" if int(normalized_message[1:]) < 18859 else "e18859"),
+                ("集數資訊", f"info:{normalized_message}"),
                 ("抽", "抽")
             ])
             line_bot_api.reply_message(
