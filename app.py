@@ -716,6 +716,10 @@ def create_preview_flex_message(image_data):
 
     return FlexSendMessage(alt_text="圖片預覽", contents=flex_content)
 
+@app.route("/")
+def index():
+    return "Bot is awake!"
+    
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
