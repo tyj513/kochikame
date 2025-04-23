@@ -566,9 +566,9 @@ app = Flask(__name__)
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
  
-# JSON文件路徑（假設與app.py在同一目錄）
-pic_database_path = 'merged_output_with_url.json'
-
+# JSON文件
+MAX_IMAGE_ID = 18859 # 假設這是圖片最大編號
+MAX_VIDEO_ID = 110   # 你提供的影片最大編號
 # 全局變數存儲加載的數據
 image_data = []
 
@@ -576,41 +576,53 @@ image_data = []
 # 錯誤訊息
 error_message = "找不到圖片"
 # 在應用啟動時加載JSON數據
-def load_image_data():
-    global image_data
+def load_json_data(file_path, data_type_name="數據"):
+    """通用載入 JSON 數據函數"""
     try:
-        with open(pic_database_path, 'r', encoding='utf-8') as f:
-            image_data = json.load(f)
-        print(f"成功加載 {len(image_data)} 條圖片數據")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        logging.info(f"成功加載 {len(data)} 條{data_type_name}")
+        return data
     except FileNotFoundError:
-        print(f"錯誤: 找不到文件 {pic_database_path}")
-        image_data = []
+        logging.error(f"錯誤: 找不到文件 {file_path}")
+        return []
     except json.JSONDecodeError:
-        print(f"錯誤: 無法解析 JSON 文件 {pic_database_path}")
-        image_data = []
+        logging.error(f"錯誤: 無法解析 JSON 文件 {file_path}")
+        return []
+
+
+image_data = load_json_data('merged_output_with_url.json', "圖片數據")
+video_data = load_json_data('merge_video_output_with_url.json', "影片數據")
 
 # 檢查圖片名稱格式 (例如 e00087)
 def validate_image_number(message):
-    pattern = r"^[Ee]\d{1,5}$"  # E 或 e 開頭，後面 1~5 位數字
+    pattern = r"^[EeVv]\d{1,5}$"  # E, e, V, v 開頭，後面 1~5 位數字
     return re.match(pattern, message) is not None
 
 def is_emoji(message):
     # Check if the character is an emoji
     return unicodedata.category(message) == 'So'
+
+
+
 def normalize_image_number(message):
-    pattern = r"^[Ee](\d{1,5})$"  # E 或 e 開頭，後面 1~5 位數字
+    pattern = r"^([EeVv])(\d{1,5})$"  # Capture prefix (E/e/V/v) and 1-5 digits
     match = re.match(pattern, message)
+    print(f"normalize_image_number🔍 正規化圖片編號: {message}")  # Debugging line
+    print(f"normalize_image_number 🔍 正規化圖片編號: {message}")  # Debugging line
     if match:
-        num = int(match.group(1))  # 轉換為數字，去掉前導零
-        return f"e{num:05d}"  # 轉換為 e00008 格式
+        prefix = match.group(1).lower()  # Get prefix and convert to lowercase
+        num = int(match.group(2))  # Get digits and convert to integer
+        return f"{prefix}{num:05d}"  # Format as prefix + 5-digit number
     return None
 
 
+
 # 從內存中查找圖片數據
-def search_image_by_number(number):
-    global image_data
-    for entry in image_data:
-        if number == entry['image_name']:
+def search_item_by_id(item_id, data_list, id_key_name):
+    """通用按 ID 查找項目函數"""
+    for entry in data_list:
+        if item_id == entry.get(id_key_name): # 使用 .get() 更安全
             return entry
     return None
  
@@ -627,6 +639,18 @@ def search_by_keyword(keyword, strict=False):
                 result.append(f"【{item['image_name']}】{item['text']}")
     return result
 
+def search_video_by_keyword(keyword, strict=False):
+    global video_data
+    result = []
+    for item in video_data:
+        if strict:
+            if keyword == item['text']:
+                result.append(f"【{item['video_name']}】{item['text']}")
+        else:
+            if keyword in item['text']:
+                result.append(f"【{item['video_name']}】{item['text']}")
+    return result
+
 # 隨機抽取一個圖片
 def random_image():
     global image_data
@@ -634,57 +658,79 @@ def random_image():
         return None
     return random.choice(image_data)
 
+def random_video():
+    global video_data
+    if not video_data:
+        return None
+    return random.choice(video_data)
+
+
 # 創建圖片詳細信息的Flex Message 
-def create_flex_message(image_data):
-    episode_number = str(image_data.get("episode", "未知"))
-    episode_title = episode_titles.get(episode_number, "未知集數")
-    print(f"🔍 檢查 episode_titles: {episode_titles}")  # 確保有資料
-    print(f"🔍 解析的 episode_number: {episode_number}")  # 確保是字串
-    print(f"🔍 查找的標題: {episode_titles.get(episode_number, '未知集數')}")  # 測試是否能匹配
+# def create_flex_message(image_data):
+#     episode_number = str(image_data.get("episode", "未知"))
+#     episode_title = episode_titles.get(episode_number, "未知集數")
+#     print(f"🔍 檢查 episode_titles: {episode_titles}")  # 確保有資料
+#     print(f"🔍 解析的 episode_number: {episode_number}")  # 確保是字串
+#     print(f"🔍 查找的標題: {episode_titles.get(episode_number, '未知集數')}")  # 測試是否能匹配
 
-    image_name = image_data.get("image_name", "")
-    image_text = image_data.get("text", "")
-    img_url = image_data.get("url", "")
-    print(f"📌 編號: {image_name}")
-    print(f"📌 集數: 第{episode_number}集")
-    print(f"📌 標題: {episode_title}")  # 這行應該要顯示正確標題
-    print(f"📌 說明: {image_text}")
+#     image_name = image_data.get("image_name", "")
+#     image_text = image_data.get("text", "")
+#     img_url = image_data.get("url", "")
+#     print(f"📌 編號: {image_name}")
+#     print(f"📌 集數: 第{episode_number}集")
+#     print(f"📌 標題: {episode_title}")  # 這行應該要顯示正確標題
+#     print(f"📌 說明: {image_text}")
 
-    flex_content = {
-        "type": "bubble",
-        "hero": {
-            "type": "image",
-            "url": img_url,
-            "size": "full",
-            "aspectRatio": "16:9",
-            "aspectMode": "cover"
-        },
-        "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-                {"type": "text", "text": f"編號: {image_name}", "weight": "bold", "size": "md"},
-                {"type": "text", "text": f"集數: 第{episode_number}集", "size": "sm", "color": "#555555"},
-                {"type": "text", "text": f"標題: {episode_title}", "weight": "bold","size": "sm", "color": "#555555"},
-                {"type": "text", "text": f"說明: {image_text}", "wrap": True, "size": "sm", "color": "#555555"}
-            ]
-        }
-    }
+#     flex_content = {
+#         "type": "bubble",
+#         "hero": {
+#             "type": "image",
+#             "url": img_url,
+#             "size": "full",
+#             "aspectRatio": "16:9",
+#             "aspectMode": "cover"
+#         },
+#         "body": {
+#             "type": "box",
+#             "layout": "vertical",
+#             "contents": [
+#                 {"type": "text", "text": f"編號: {image_name}", "weight": "bold", "size": "md"},
+#                 {"type": "text", "text": f"集數: 第{episode_number}集", "size": "sm", "color": "#555555"},
+#                 {"type": "text", "text": f"標題: {episode_title}", "weight": "bold","size": "sm", "color": "#555555"},
+#                 {"type": "text", "text": f"說明: {image_text}", "wrap": True, "size": "sm", "color": "#555555"}
+#             ]
+#         }
+#     }
 
-    return FlexSendMessage(alt_text="圖片資訊", contents=flex_content)
+#     return FlexSendMessage(alt_text="圖片資訊", contents=flex_content)
 
 # 創建Quick Reply按鈕
-def create_quick_reply(buttons=None):
-    # 如果未提供按鈕，則使用默認按鈕
-    if buttons is None:
-        buttons = [
-            ("選單", "menu"),
-            ("抽圖", "抽")
-        ]
-    
-    items = []
-    for label, text in buttons:
-        items.append(QuickReplyButton(action=MessageAction(label=label, text=text)))
+def create_quick_reply(arg):
+    if isinstance(arg, str):
+        # Handle mode-based buttons
+        if arg == "image":
+            buttons = [
+                ("切換到影片模式", "/video"),
+                ("抽圖", "抽"),
+                ("選單", "menu")
+            ]
+        elif arg == "video":
+            buttons = [
+                ("切換到圖片模式", "/image"),
+                # ("抽影片", "抽影片"),
+                ("選單", "menu")
+            ]
+        else:
+            buttons = []  # Default to empty list for unrecognized modes
+    elif isinstance(arg, list):
+        # Use the provided list directly as buttons
+        buttons = arg
+    else:
+        # Fallback for invalid input
+        buttons = []
+
+    # Create QuickReply items from the buttons list
+    items = [QuickReplyButton(action=MessageAction(label=label, text=text)) for label, text in buttons]
     return QuickReply(items=items)
 
 # 創建圖片預覽的Flex Message
@@ -715,11 +761,94 @@ def create_preview_flex_message(image_data):
     }
 
     return FlexSendMessage(alt_text="圖片預覽", contents=flex_content)
+# def create_video_flex_message(video_data):
+#     episode_number = str(video_data.get("episode", "未知"))
+#     episode_title = episode_titles.get(episode_number, "未知集數")
+#     print(f"🔍 檢查 episode_titles: {episode_titles}")  # 確保有資料
+#     print(f"🔍 解析的 episode_number: {episode_number}")  # 確保是字串
+#     print(f"🔍 查找的標題: {episode_titles.get(episode_number, '未知集數')}")  # 測試是否能匹配
 
-@app.route("/")
-def index():
-    return "Bot is awake!"
-    
+#     video_name = video_data.get("video_name", "")
+#     video_text = video_data.get("text", "")
+#     img_url = video_data.get("url", "")
+#     print(f"📌 編號: {video_name}")
+#     print(f"📌 集數: 第{episode_number}集")
+#     print(f"📌 標題: {episode_title}")  # 這行應該要顯示正確標題
+#     print(f"📌 說明: {video_text}")
+
+#     flex_content = {
+#         "type": "bubble",
+#         "hero": {
+#             "type": "image",
+#             "url": img_url,
+#             "size": "full",
+#             "aspectRatio": "16:9",
+#             "aspectMode": "cover"
+#         },
+#         "body": {
+#             "type": "box",
+#             "layout": "vertical",
+#             "contents": [
+#                 {"type": "text", "text": f"編號: {video_name}", "weight": "bold", "size": "md"},
+#                 {"type": "text", "text": f"集數: 第{episode_number}集", "size": "sm", "color": "#555555"},
+#                 {"type": "text", "text": f"標題: {episode_title}", "weight": "bold","size": "sm", "color": "#555555"},
+#                 {"type": "text", "text": f"說明: {video_text}", "wrap": True, "size": "sm", "color": "#555555"}
+#             ]
+#         }
+#     }
+
+#     return FlexSendMessage(alt_text="影片資訊", contents=flex_content)
+
+def create_media_flex_message(media_data, media_type="image"):
+    """通用建立媒體資訊 Flex Message 函數"""
+    if media_type == "image":
+        id_key = "image_name"
+        alt_text = "圖片資訊"
+        id_label = "編號"
+    elif media_type == "video":
+        id_key = "video_name"
+        alt_text = "影片資訊"
+        id_label = "編號" # 或者你想用 "影片編號"
+    else:
+        return None # 不支持的類型
+
+    media_id = media_data.get(id_key, "未知")
+    media_text = media_data.get("text", "")
+    img_url = media_data.get("url", "") # 假設影片也用 url 欄位存封面圖
+    video_img_url = media_data.get("thumb_url", "") # 影片的封面圖 URL
+    episode_number = str(media_data.get("episode", "未知"))
+    # 假設 episode_titles 仍然是全局可訪問的
+    episode_title = episode_titles.get(episode_number, "未知集數")
+
+    # 可以在這裡加入 logging 替換 print
+    logging.info(f"📌 {id_label}: {media_id}")
+    logging.info(f"📌 集數: 第{episode_number}集")
+    logging.info(f"📌 標題: {episode_title}")
+    logging.info(f"📌 說明: {media_text}")
+
+    flex_content = {
+        "type": "bubble",
+        "hero": {
+            "type": "image",
+            "url": img_url if media_type == "image" else (video_img_url),
+            "size": "full",
+            "aspectRatio": "16:9",
+            "aspectMode": "cover"
+        },
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {"type": "text", "text": f"{id_label}: {media_id}", "weight": "bold", "size": "md"},
+                {"type": "text", "text": f"集數: 第{episode_number}集", "size": "sm", "color": "#555555"},
+                {"type": "text", "text": f"標題: {episode_title}", "weight": "bold", "size": "sm", "color": "#555555"},
+                {"type": "text", "text": f"說明: {media_text}", "wrap": True, "size": "sm", "color": "#555555"}
+            ]
+        }
+    }
+    # 假設 FlexSendMessage 是從 line_bot_sdk 導入的 
+    return FlexSendMessage(alt_text=alt_text, contents=flex_content)
+ 
 @app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
@@ -733,15 +862,59 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = event.message.text.strip()
+    user_id = event.source.user_id
+    logging.info(f"收到來自 {user_id} 的訊息: {message}")
+ 
 
-    # 處理「menu」指令
     if message.lower() == "menu":
-        reply_message = "歡迎使用壽限無壽限無五卻之麵粉君之烏龍派出所動畫機器人！\n" \
-                        "指令列表：\n" \
-                        "- 輸入編號（例如 e00087）查看圖片\n" \
-                        "- 輸入關鍵字搜尋圖片名稱\n" \
-                        "- 輸入「抽」隨機抽取一張圖片"
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+        reply_message = (
+        "📱歡迎使用《壽限無壽限無五卻之麵粉君之烏龍派出所動畫機器人》📱\n"
+        "（咳咳咳…）睜大眼睛聽好！這可是我兩津勘吉，親手打造出來的機器人！\n"
+        "用法超簡單，就連所長那老頑固都會用，沒問題啦！\n\n"
+
+        "【想看圖片？📸】（來嘛來嘛，不看就虧大了！）\n\n"
+        "📌 方法一：直接輸入編號！\n"
+        "像是 e87、e9527，只要在數字前面加個 e 就行啦！\n"
+        "（範例:e100）\n\n"
+        "📌 方法二：輸入關鍵字！\n"
+        "想看誰？所長？麗子？還是本人的英姿？輸名字就對了！\n"
+        "也可以打事件或物品，例如：腳踏車、獎金、便當之類的～\n"
+        "（範例：沙織）\n\n"
+
+        "📌 方法三：懶得想？那就輸入「抽」！\n"
+        "我兩津本人幫你隨機挑一張，抽到什麼全看你人品啦！\n\n"
+
+        "【想看會動的影片？🎬】\n\n"
+        "🎥 方法一：直接輸入編號！\n"
+        "像是 v85、v20，影片是 v 開頭的。\n"
+        "（範例：v77）\n\n"
+        "🎥 方法二：想知道有全部有哪些影片？打「v」！\n"
+        "只輸入一個 v，我兩津就把影片清單砸給你！慢慢挑～\n\n"
+
+        "🎥 方法三：輸入「v關鍵字」找影片！\n"
+        "如果想看有哪些爆炸名場面？就打「v爆炸」\n"
+        "（範例：v火災）\n\n"
+ 
+        "行啦，教學結束！再不懂我可要開罵了喔 😠\n"
+        "快給我用用看！我還要回去看看三角機器人有沒有被所長亂動…！\n"
+    )
+
+
+
+
+
+        
+        # 建立快速回覆按鈕
+        quick_reply = create_quick_reply([
+            ("選單", "menu"),
+            ("抽圖片", "抽")
+            # ("抽影片", "抽影片")
+        ])
+        
+        line_bot_api.reply_message(
+            event.reply_token, 
+            TextSendMessage(text=reply_message, quick_reply=quick_reply)
+        )
         return
 
     # 處理「抽」指令
@@ -768,29 +941,169 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
         return
     
+    # elif message == "抽影片":
+    #     random_v = random_video()
+    #     if random_v:
+    #         print(f"隨機抽取的影片: {random_v}")  # Debugging line
+    #         # 使用圖片編號創建適合的快速回覆按鈕
+    #         video_number = random_v['video_name']
+    #         quick_reply = create_quick_reply([
+    #             ("集數資訊", f"info:{video_number}"),
+    #             ("再抽一次", "抽"),
+    #             ("選單", "menu")
+    #         ]) 
+
+
+    #         line_bot_api.reply_message(
+    #             event.reply_token,
+    #             VideoSendMessage(
+    #                 original_content_url=random_v['url'],
+    #                 preview_image_url=vid_data.get('preview_url', vid_data['url']) ,# 假設預覽圖 URL
+    #                 quick_reply=quick_reply
+    #             )
+    #         )
+    #     else:
+    #         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
+    #     return
+    
+    elif message == "v": 
+        # 顯示所有影片列表
+        video_list = []
+        for item in video_data:
+            video_name = item.get('video_name', '')
+            text = item.get('text', '')
+            episode = item.get('episode', '')
+            episode_title = episode_titles.get(episode, "")
+            
+            # 格式化每個影片的顯示內容
+            video_entry = f"{video_name} -- {text} (第{episode}集 {episode_title})"
+            video_list.append(video_entry)
+            
+        # 合併所有影片資訊成一個字串
+        reply_message = "\n".join(video_list)
+        
+        # 如果列表過長，可能需要分段發送
+        if len(reply_message) > 5000:  # LINE 訊息有字數限制
+            chunks = [reply_message[i:i+4000] for i in range(0, len(reply_message), 4000)]
+            for chunk in chunks:
+                line_bot_api.push_message(event.source.user_id, TextSendMessage(text=chunk))
+            return
+        
+        # 建立快速回覆按鈕
+        quick_reply = create_quick_reply([
+            ("選單", "menu"),
+            ("抽圖片", "抽")
+        ])
+        
+        # 回覆訊息
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(
+                text=reply_message,
+                quick_reply=quick_reply
+            )
+        )
+        return
+    
     # 處理圖片資訊請求
     elif message.startswith("info:"):
-        image_number = message.replace("info:", "")
-        img_num = int(image_number[1:])  # 把 e42574 取數字部分
-        prev_number = f"e{img_num - 1:05d}"
-        next_number = f"e{img_num + 1:05d}"
-        
-        img_data = search_image_by_number(image_number)
-        if img_data:
-            quick_reply = create_quick_reply([
-                ("上一張", prev_number),
-                ("下一張", next_number),
-                ("抽", "抽"),
-                ("選單", "menu")
-            ])
-            flex_message = create_flex_message(img_data)
-            line_bot_api.reply_message(
-                event.reply_token,
-                [flex_message, TextSendMessage(text="請選擇操作：", quick_reply=quick_reply)]
-            )
+        item_id_raw = message.replace("info:", "") # e.g., "v2" or "e87"
+        normalized_id = normalize_image_number(item_id_raw) # e.g., "v00002" or "e00087"
+
+        if not normalized_id:
+            logging.warning(f"無效的 info 格式: {item_id_raw}")
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無效的編號格式。"))
+            return
+
+        logging.info(f"🔍 處理 info 請求，正規化編號: {normalized_id}")
+
+        media_data = None
+        media_type = ""
+        data_list_to_search = []
+        id_key_to_search = ""
+        max_id_num = 0
+        prefix = normalized_id[0].lower() # 'v' or 'e'
+        item_num = int(normalized_id[1:]) # 數字部分
+
+        # 根據前綴決定搜尋目標和參數
+        if prefix == 'v':
+            media_type = "video"
+            data_list_to_search = video_data
+            id_key_to_search = 'video_name'
+            max_id_num = MAX_VIDEO_ID
+            nav_labels = ("上一部影片", "下一部影片")
+            # random_cmd = "抽影片" # 假設有抽影片指令
+        elif prefix == 'e':
+            media_type = "image"
+            data_list_to_search = image_data
+            id_key_to_search = 'image_name'
+            max_id_num = MAX_IMAGE_ID
+            nav_labels = ("上一張", "下一張")
+            random_cmd = "抽"
         else:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片資訊。"))
-        return
+            # 理論上 normalize_image_number 會處理好，但以防萬一
+            logging.error(f"無法識別的編號前綴: {prefix} in {normalized_id}")
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="內部錯誤：無法識別的編號。"))
+            return
+
+        # 執行搜尋
+        media_data = search_item_by_id(normalized_id, data_list_to_search, id_key_to_search)
+
+        if media_data:
+            logging.info(f"✅ 找到 {media_type} 資訊: {normalized_id}")
+            # --- 產生正確的導航連結 ---
+            # 處理上一項
+            if item_num > 1:
+                prev_num_str = f"{prefix}{(item_num - 1):05d}"
+            else:
+                prev_num_str = normalized_id # 如果是第一項，"上一項" 指向自己或禁用 (這裡指回自己)
+
+            # 處理下一項
+            if item_num < max_id_num:
+                next_num_str = f"{prefix}{(item_num + 1):05d}"
+            else:
+                next_num_str = normalized_id # 如果是最後一項，"下一項" 指向自己或禁用
+
+
+
+
+            quick_reply_buttons = [
+                (nav_labels[0], prev_num_str),
+                (nav_labels[1], next_num_str),
+                ("選單", "menu")
+            ]
+
+            # 只有圖片時才加入抽的指令
+            if prefix == 'e':
+                quick_reply_buttons.insert(2, ("抽", "抽"))
+
+
+ 
+            # 過濾掉指向自己的導航按鈕 (可選)
+            quick_reply_buttons_filtered = [(label, text) for label, text in quick_reply_buttons if text != normalized_id or label in [random_cmd, "選單"]]
+
+            quick_reply = create_quick_reply(quick_reply_buttons_filtered)
+
+            # --- 建立 Flex Message ---
+            flex_message = create_media_flex_message(media_data, media_type) # 傳入正確的類型
+
+            if flex_message:
+                # --- 回覆訊息 ---
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    [flex_message, TextSendMessage(text="請選擇操作：", quick_reply=quick_reply)]
+                )
+            else:
+                 logging.error(f"無法為 {normalized_id} 創建 Flex Message (類型: {media_type})")
+                 line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法生成項目資訊卡片。"))
+
+        else:
+            # --- 未找到資料的回應 ---
+            error_msg = f"找不到指定的{media_type}資訊 ({normalized_id})。" # 更精確的錯誤訊息
+            logging.warning(error_msg)
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=error_msg))
+
+        return # 處理完畢
 
     # 處理上一張/下一張指令
     elif message.startswith("prev:") or message.startswith("next:"):
@@ -803,7 +1116,7 @@ def handle_message(event):
             img_num = int(current_image[1:])
             target_image = f"e{img_num + 1:05d}"
             
-        img_data = search_image_by_number(target_image)
+        img_data = search_item_by_id(normalized_message, image_data, 'image_name')
         if img_data:
             # 處理顯示新圖片的邏輯
             quick_reply = create_quick_reply([
@@ -826,27 +1139,68 @@ def handle_message(event):
 
     # 處理圖片編號請求
     elif validate_image_number(message):
-        normalized_message = normalize_image_number(message)  # 轉換 e8 -> e00008
-        img_data = search_image_by_number(normalized_message)
+        normalized_message = normalize_image_number(message)
+        logging.info(f"🔍 處理正規化編號: {normalized_message}")
+
+        img_data = search_item_by_id(normalized_message, image_data, 'image_name')
+        vid_data = search_item_by_id(normalized_message, video_data, 'video_name')
+
+        reply_messages = []
+        quick_reply_items = []
+
         if img_data:
-            quick_reply = create_quick_reply([
-                ("上一張", f"{normalize_image_number(f'e{int(normalized_message[1:]) - 1}')}" if int(normalized_message[1:]) > 1 else "e00001"),
-                ("下一張", f"{normalize_image_number(f'e{int(normalized_message[1:]) + 1}')}" if int(normalized_message[1:]) < 18859 else "e18859"),
+            logging.info(f"✅ 找到圖片: {normalized_message}")
+            # 建立圖片 Quick Reply
+            img_num = int(normalized_message[1:])
+            prev_img_num_str = normalize_image_number(f'e{img_num - 1}') if img_num > 1 else "e00001" # 考慮邊界
+            next_img_num_str = normalize_image_number(f'e{img_num + 1}') if img_num < 18859 else "e18859" # 考慮邊界, 18859 應設為常數或配置
+
+            img_quick_reply = create_quick_reply([
+                ("上一張", prev_img_num_str),
+                ("下一張", next_img_num_str),
                 ("集數資訊", f"info:{normalized_message}"),
                 ("抽", "抽")
             ])
-            line_bot_api.reply_message(
-                event.reply_token,
+            reply_messages.append(
                 ImageSendMessage(
                     original_content_url=img_data['url'],
                     preview_image_url=img_data['url'],
-                    quick_reply=quick_reply
+                    quick_reply=img_quick_reply # 將 Quick Reply 附加到圖片訊息
                 )
             )
-        else:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到圖片。"))
-        return
 
+        if vid_data:
+            logging.info(f"✅ 找到影片: {normalized_message}")
+            # 建立影片 Quick Reply
+            vid_num = int(normalized_message[1:]) # 假設影片編號規則與圖片相同
+            prev_vid_num_str = normalize_image_number(f'v{vid_num - 1}') if vid_num > 1 else "v00001" # 注意前綴 'v'
+            next_vid_num_str = normalize_image_number(f'v{vid_num + 1}') if vid_num < MAX_VIDEO_ID else f"v{MAX_VIDEO_ID}" # 假設有 MAX_VIDEO_ID
+
+            vid_quick_reply = create_quick_reply([
+                ("上一部影片", prev_vid_num_str),
+                ("下一部影片", next_vid_num_str),
+                ("集數資訊", f"info:{normalized_message}")# 可能需要不同的 info 前綴或處理方式
+                # ("抽影片", "抽影片") # 假設有抽影片功能
+            ]) 
+            reply_messages.append(
+                VideoSendMessage(
+                    original_content_url=vid_data['url'],
+                    preview_image_url=vid_data.get('preview_url', vid_data['url']) # 假設預覽圖 URL
+                )
+            )
+            # 如果需要 Quick Reply，接著發送文字消息
+            reply_messages.append(
+                TextSendMessage(text="請選擇影片相關操作：", quick_reply=vid_quick_reply)
+            )
+
+
+        if reply_messages:
+            line_bot_api.reply_message(event.reply_token, reply_messages)
+        else:
+            logging.warning(f"❌ 找不到編號 {normalized_message} 對應的圖片或影片")
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text=error_message)) # 使用全局錯誤訊息
+
+        return  
     # 處理嚴格搜索請求
     elif message.startswith("strict:"):
         keyword = message.replace("strict:", "").strip()
@@ -871,8 +1225,7 @@ def handle_message(event):
         )
         return
         
-# Handle single emoji input
-# Handle single emoji input
+    # Handle single emoji input 
     elif len(message) == 1:
         if is_emoji(message[0]):
             # Handle emoji case
@@ -904,8 +1257,28 @@ def handle_message(event):
             )
         )
         return  
+   
+    elif message.startswith("v"):
+        print(f"🔍 搜尋影片關鍵字: {message[1:]}")  # Debugging line
+        search_result = search_video_by_keyword(message[1:])
+        if search_result:  
+            reply_message = "\n".join(search_result)
+        else:
+            reply_message = "找不到符合的影片名稱。"
 
-    
+        quick_reply = create_quick_reply([
+            ("選單", "menu")
+            # ("抽影片", "抽")
+        ])
+        
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(
+                text=reply_message,
+                quick_reply=quick_reply
+            )
+        )   
+
     # 關鍵字搜尋（默認行為）
     else:
         search_result = search_by_keyword(message)
@@ -913,6 +1286,15 @@ def handle_message(event):
             reply_message = "\n".join(search_result)
         else:
             reply_message = "找不到符合的圖片名稱。"
+
+        
+        # 如果列表過長，可能需要分段發送
+        if len(reply_message) > 5000:  # LINE 訊息有字數限制
+            chunks = [reply_message[i:i+4000] for i in range(0, len(reply_message), 4000)]
+            for chunk in chunks:
+                line_bot_api.push_message(event.source.user_id, TextSendMessage(text=chunk))
+            return
+        
 
         quick_reply = create_quick_reply([
             ("選單", "menu"),
@@ -926,9 +1308,6 @@ def handle_message(event):
                 quick_reply=quick_reply
             )
         )
-
-# 啟動應用時加載圖片數據
-load_image_data()
-
+ 
 if __name__ == "__main__":
     app.run(debug=True)
