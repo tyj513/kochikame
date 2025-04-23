@@ -11,8 +11,14 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
 import os
 from dotenv import load_dotenv
-import unicodedata
-
+import unicodedata 
+from linebot.models import QuickReply, QuickReplyButton, MessageAction
+from linebot.models import FlexSendMessage
+from linebot.models import BubbleContainer, BoxComponent, TextComponent, ImageComponent, ButtonComponent, IconComponent, SeparatorComponent
+    
+from linebot.models import VideoSendMessage,MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
+  
+import logging # 建議使用 logging 而不是 print
 
 # 載入 .env 檔案
 load_dotenv()
