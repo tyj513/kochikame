@@ -594,6 +594,32 @@ def load_json_data(file_path, data_type_name="數據"):
 image_data = load_json_data('merged_output_with_url.json', "圖片數據")
 video_data = load_json_data('merge_video_output_with_url.json', "影片數據")
 
+
+# 新增搜尋特定集數的功能
+def search_by_episode(episode_number):
+    """
+    搜尋特定集數的所有圖片和台詞
+    
+    Args:
+        episode_number (str): 要搜尋的集數
+        
+    Returns:
+        list: 包含該集數所有圖片的台詞、image_name 和 URL
+    """
+    results = []
+    for idx, item in enumerate(image_data):
+        if item.get("episode") == episode_number:
+            results.append({
+                "text": item.get("text", "無台詞"),
+                "image_name": item.get("image_name", f"image_{idx}"),
+                "url": item.get("url", ""),
+                "index": idx
+            })
+    
+    return results
+
+
+
 # 檢查圖片名稱格式 (例如 e00087)
 def validate_image_number(message):
     pattern = r"^[EeVv]\d{1,5}$"  # E, e, V, v 開頭，後面 1~5 位數字
@@ -776,6 +802,52 @@ def handle_message(event):
     logging.info(f"收到來自 {user_id} 的訊息: {message}")
  
 
+
+    import re
+    match = re.match(r"(ep|Ep|EP|集數)[\s:]*([0-9]+)", message)
+    episode_number = match.group(2) if match else None
+
+    if episode_number:
+        # 搜尋該集數的所有台詞
+        episode_results = search_by_episode(episode_number)
+        
+        if episode_results:
+            # 組織回覆訊息
+            episode_title = episode_titles.get(episode_number, "未知集數")
+            reply_text = f"第{episode_number}集「{episode_title}」的台詞：\n\n"
+            
+            for idx, result in enumerate(episode_results, 1):
+                reply_text += f"{idx}. 【{result['image_name']}】{result['text']}\n"
+            
+            # 如果訊息過長，分段發送
+            if len(reply_text) > 5000:
+                chunks = [reply_text[i:i+4000] for i in range(0, len(reply_text), 4000)]
+                for chunk in chunks:
+                    line_bot_api.push_message(user_id, TextSendMessage(text=chunk))
+                return
+            else:
+                # 建立快速回覆按鈕
+                quick_reply = create_quick_reply([
+                    ("選單", "menu"),
+                    ("抽圖", "抽")
+                ])
+                
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text=reply_text, quick_reply=quick_reply)
+                )
+                return
+             
+           
+        else:
+            line_bot_api.reply_message(
+                event.reply_token, 
+                TextSendMessage(text=f"找不到第{episode_number}集的資料。")
+            )
+            return
+
+
+
     if message.lower() == "menu":
         reply_message = (
         "📱歡迎使用《壽限無壽限無五卻之麵粉君之烏龍派出所動畫機器人》📱\n"
@@ -793,6 +865,12 @@ def handle_message(event):
 
         "📌 方法三：懶得想？那就輸入「抽」！\n"
         "我兩津本人幫你隨機挑一張，抽到什麼全看你人品啦！\n\n"
+
+        "【想查看特定集數的台詞？📖】\n\n"
+        "🔎 輸入「集數數字」或「ep數字」\n"
+        "例如想看第202集的所有台詞，就輸入「集數202」或「ep202」\n"
+        "我會列出該集所有的台詞和對應的圖片編號！\n"
+        "（範例：ep202）\n\n"
 
         "【想看會動的影片？🎬】\n\n"
         "🎥 方法一：直接輸入編號！\n"
