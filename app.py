@@ -908,6 +908,7 @@ def handle_message(event):
             quick_reply = create_quick_reply([
                 ("集數資訊", f"info:{image_number}"),
                 ("再抽一次", "抽"),
+                ("該集數的台詞", f"ep:{random_img['episode']}"),
                 ("選單", "menu")
             ])
             
@@ -1128,6 +1129,7 @@ def handle_message(event):
                 ("上一張", prev_img_num_str),
                 ("下一張", next_img_num_str),
                 ("集數資訊", f"info:{normalized_message}"),
+                ("該集所有台詞", f"ep{img_data.get('episode', '未知')}"),
                 ("抽", "抽")
             ])
             reply_messages.append(
