@@ -954,12 +954,14 @@ def handle_message(event):
         video_list = []
         for item in video_data:
             video_name = item.get('video_name', '')
+            normalized_id = normalize_image_number(video_name)
             text = item.get('text', '')
             episode = item.get('episode', '')
             episode_title = episode_titles.get(episode, "")
             
-            video_entry = f"{video_name} -- {text} (第{episode}集 {episode_title})"
+            video_entry = f"【{normalized_id}】{text} (第{episode}集 {episode_title})"
             video_list.append(video_entry)
+            
             
         reply_message = "\n".join(video_list)
         
