@@ -1045,6 +1045,7 @@ def handle_message(event):
             quick_reply_buttons = [
                 (nav_labels[0], prev_num_str),
                 (nav_labels[1], next_num_str),
+                ("該集所有台詞", "ep" + str(media_data.get("episode", "未知"))),
                 ("選單", "menu")
             ]
 
