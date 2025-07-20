@@ -570,7 +570,7 @@ line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
  
 # 
-MAX_IMAGE_ID = 18859  
+MAX_IMAGE_ID = 19513  
 MAX_VIDEO_ID = 110    
 image_data = []
 video_data = []
