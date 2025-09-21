@@ -109,5 +109,3 @@ This project is set up for deployment on Heroku.
   * `merge_video_output_with_url.json`: Contains a JSON array of objects for video clips with similar metadata.
 
 -----
-
-You can copy and paste this into a file named `README.md` in your project's root directory. Let me know if you'd like any sections expanded or modified\!
