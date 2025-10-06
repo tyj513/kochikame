@@ -1125,8 +1125,8 @@ def handle_message(event):
             logging.info(f"✅ 找到圖片: {normalized_message}")
             # 建立圖片 Quick Reply
             img_num = int(normalized_message[1:])
-            prev_img_num_str = normalize_image_number(f'e{img_num - 1}') if img_num > 1 else "e00001" # 考慮邊界
-            next_img_num_str = normalize_image_number(f'e{img_num + 1}') if img_num < 18859 else "e18859" # 考慮邊界, 18859 應設為常數或配置
+            prev_img_num_str = normalize_image_number(f'e{img_num - 1}') if img_num > 1 else "e00001" # 考慮邊界 
+            next_img_num_str = normalize_image_number(f'e{img_num + 1}') if img_num < 19513 else "e19513"  
 
             img_quick_reply = create_quick_reply([
                 ("上一張", prev_img_num_str),
