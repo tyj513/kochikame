@@ -1059,11 +1059,11 @@ def handle_message(event):
             ("🍽️ 吃", "吃")
         ])
             
-        line_bot_api.reply_message(
-            event.reply_token, 
-            TextSendMessage(text=reply_message, quick_reply=quick_reply)
-        )
-        return
+    line_bot_api.reply_message(
+        event.reply_token, 
+        TextSendMessage(text=reply_message, quick_reply=quick_reply)
+    )
+    return
 
 
     elif message == "抽":
