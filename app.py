@@ -1034,12 +1034,11 @@ def handle_message(event):
                 TextSendMessage(text=f"找不到第{episode_number}集的資料。")
             )
             return
+    
 
-
-     
     if message.lower() == "menu":
-            # 注意：下面的文字內容要貼齊最左邊，不要有縮排
-            reply_message = """【多人群組請以「/」開頭】 
+        # 注意：下面的文字內容要貼齊最左邊，不要有縮排
+        reply_message = """【多人群組請以「/」開頭】 
     📸 圖片
     輸入「抽」隨機抽圖片
     輸入「e數字」取得圖片（例：e100）
@@ -1053,17 +1052,19 @@ def handle_message(event):
     輸入「ep數字」查看該集內容（例：ep202） 
     輸入「吃」抽選食物
     輸入「qa」意見回報"""
+        
         quick_reply = create_quick_reply([
             ("選單", "menu"),
             ("抽圖片", "抽"),
             ("🍽️ 吃", "吃")
         ])
-            
-    line_bot_api.reply_message(
-        event.reply_token, 
-        TextSendMessage(text=reply_message, quick_reply=quick_reply)
-    )
-    return
+        
+        line_bot_api.reply_message(
+            event.reply_token, 
+            TextSendMessage(text=reply_message, quick_reply=quick_reply)
+        )
+        return
+
 
 
     elif message == "抽":
