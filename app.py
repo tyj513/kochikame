@@ -886,8 +886,34 @@ def callback():
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
-    return 'OK'
-
+    return 'OK' 
+    
+def send_link_card(reply_token, title, text, url_label, url):
+    flex_content = {
+        "type": "bubble",
+        "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {"type": "text", "text": title, "weight": "bold", "size": "xl"},
+                {"type": "text", "text": text, "margin": "md", "size": "sm", "color": "#666666", "wrap": True}
+            ]
+        },
+        "footer": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+                {
+                    "type": "button",
+                    "style": "link",
+                    "height": "sm",
+                    "action": {"type": "uri", "label": url_label, "uri": url}
+                }
+            ]
+        }
+    }
+    line_bot_api.reply_message(reply_token, FlexSendMessage(alt_text=title, contents=flex_content))
+    
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     raw_message = event.message.text.strip()  
@@ -907,7 +933,17 @@ def handle_message(event):
              
     if not message:
         return
-
+ 
+    if message == "qa" or message == "意見": 
+        send_link_card(
+            event.reply_token,
+            title="意見與回報",
+            text="點擊下方按鈕前往意見與回報！",
+            url_label="前往填寫", 
+            url="https://docs.google.com/forms/d/e/1FAIpQLSf-TFffHGb4Kvdn4NC0nfUROkg988-d9EnvJ_q5WL0q3qtPsg/viewform"  
+        )
+        return
+        
     if message == "吃" or message == "食物":
         # 顯示6個食物分類 + 隨便抽選項
         category_quick_reply = QuickReply(items=[
@@ -1000,34 +1036,34 @@ def handle_message(event):
             return
 
 
-
-if message.lower() == "menu":
-    reply_message = """【多人群組請以「/」開頭】
-
-            📸 圖片
-            輸入「抽」隨機抽圖片
-            輸入「e數字」取得圖片（例：e100）
-            輸入「關鍵字」搜尋圖片（例：噗通、芭蕾、惠比壽）
-            
-            🎬 影片
-            輸入「v編號」觀看影片（例：v77）
-            輸入「v」查看影片列表
-            輸入「v關鍵字」搜尋影片（例：v爆炸）
-             
-            輸入「ep數字」查看該集內容（例：ep202） 
-            輸入「吃」抽選食物
-            """
-        quick_reply = create_quick_reply([
-            ("選單", "menu"),
-            ("抽圖片", "抽"),
-            ("🍽️ 吃", "吃")
-        ])
-
-        line_bot_api.reply_message(
-            event.reply_token, 
-            TextSendMessage(text=reply_message, quick_reply=quick_reply)
-        )
-        return
+    
+    if message.lower() == "menu":
+        reply_message = """【多人群組請以「/」開頭】
+    
+                📸 圖片
+                輸入「抽」隨機抽圖片
+                輸入「e數字」取得圖片（例：e100）
+                輸入「關鍵字」搜尋圖片（例：噗通、芭蕾、惠比壽）
+                
+                🎬 影片
+                輸入「v編號」觀看影片（例：v77）
+                輸入「v」查看影片列表
+                輸入「v關鍵字」搜尋影片（例：v爆炸）
+                 
+                輸入「ep數字」查看該集內容（例：ep202） 
+                輸入「吃」抽選食物
+                """
+            quick_reply = create_quick_reply([
+                ("選單", "menu"),
+                ("抽圖片", "抽"),
+                ("🍽️ 吃", "吃")
+            ])
+    
+            line_bot_api.reply_message(
+                event.reply_token, 
+                TextSendMessage(text=reply_message, quick_reply=quick_reply)
+            )
+            return
 
 
     elif message == "抽":
