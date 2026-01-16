@@ -1017,10 +1017,6 @@ if message.lower() == "menu":
             輸入「ep數字」查看該集內容（例：ep202） 
             輸入「吃」抽選食物
             """
-
-    )
-
-
         quick_reply = create_quick_reply([
             ("選單", "menu"),
             ("抽圖片", "抽"),
