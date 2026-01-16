@@ -1248,6 +1248,7 @@ def handle_message(event):
                 ("集數資訊", f"info:{normalized_message}"),
                 ("該集所有台詞", f"ep{img_data.get('episode', '未知')}"),
                 ("抽", "抽"),
+                ("🍽️ 吃", "吃"),
                 ("選單", "menu")
             ])
             reply_messages.append(
