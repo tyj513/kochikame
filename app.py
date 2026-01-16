@@ -1,24 +1,24 @@
+# === 標準函式庫 ===
 import re
 import json
-from linebot.models import QuickReply, QuickReplyButton, MessageAction
-from linebot.models import FlexSendMessage
-from linebot.models import BubbleContainer, BoxComponent, TextComponent, ImageComponent, ButtonComponent, IconComponent, SeparatorComponent
-
 import random
+import os
+import logging
+import unicodedata
+
+# === 第三方函式庫 ===
 from flask import Flask, request, abort
+from dotenv import load_dotenv
+
+# === LINE Bot SDK ===
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
-import os
-from dotenv import load_dotenv
-import unicodedata 
-from linebot.models import QuickReply, QuickReplyButton, MessageAction
-from linebot.models import FlexSendMessage
-from linebot.models import BubbleContainer, BoxComponent, TextComponent, ImageComponent, ButtonComponent, IconComponent, SeparatorComponent
-    
-from linebot.models import VideoSendMessage,MessageEvent, TextMessage, TextSendMessage, ImageSendMessage
-  
-import logging 
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, VideoSendMessage,
+    QuickReply, QuickReplyButton, MessageAction, FlexSendMessage,
+    BubbleContainer, BoxComponent, TextComponent, ImageComponent,
+    ButtonComponent, IconComponent, SeparatorComponent
+) 
  
 load_dotenv()
  
@@ -574,6 +574,7 @@ MAX_IMAGE_ID = 19513
 MAX_VIDEO_ID = 110    
 image_data = []
 video_data = []
+food_data = []
 
   
 error_message = "找不到圖片"
@@ -593,6 +594,109 @@ def load_json_data(file_path, data_type_name="數據"):
 
 image_data = load_json_data('merged_output_with_url.json', "圖片數據")
 video_data = load_json_data('merge_video_output_with_url.json', "影片數據")
+food_categorized = load_json_data('food_categorized.json', "食物分類數據")
+
+# 食物 emoji 對應到分類 ID (6大分類)
+food_emoji_to_category = {
+    # 🍺 酒類飲料 (82個)
+    "🍺": "beer",      # 啤酒
+    "🍻": "beer",      # 乾杯
+    "🍷": "beer",      # 紅酒
+    "🍶": "beer",      # 清酒
+    "🥂": "beer",      # 香檳
+    "🍸": "beer",      # 雞尾酒
+    "🍹": "beer",      # 調酒
+    "🥃": "beer",      # 威士忌
+    "☕": "beer",      # 咖啡
+    "🍵": "beer",      # 茶
+    "🥛": "beer",      # 牛奶
+    "🧃": "beer",      # 果汁
+    # 🍣 海鮮壽司 (76個)
+    "🍣": "sushi",     # 壽司
+    "🐟": "sushi",     # 魚
+    "🦐": "sushi",     # 蝦
+    "🦀": "sushi",     # 螃蟹
+    "🐙": "sushi",     # 章魚
+    "🦑": "sushi",     # 魷魚
+    "🦞": "sushi",     # 龍蝦
+    "🦪": "sushi",     # 牡蠣
+    # 🍚 主食 (78個) - 飯麵餃子咖哩速食
+    "🍚": "rice",      # 飯
+    "🍱": "rice",      # 便當
+    "🍙": "rice",      # 飯糰
+    "🍜": "rice",      # 麵
+    "🍝": "rice",      # 義大利麵
+    "🍛": "rice",      # 咖哩
+    "🥟": "rice",      # 餃子
+    "🥡": "rice",      # 中華料理
+    "🍕": "rice",      # 披薩
+    "🍔": "rice",      # 漢堡
+    "🌭": "rice",      # 熱狗
+    "🥪": "rice",      # 三明治
+    "🍟": "rice",      # 薯條
+    "🌮": "rice",      # 塔可
+    "🥙": "rice",      # 口袋餅
+    # 🍖 肉類燒烤 (76個)
+    "🍖": "meat",      # 肉
+    "🍗": "meat",      # 雞腿
+    "🥩": "meat",      # 牛排
+    "🥓": "meat",      # 培根
+    "🥓": "meat",      # 香腸
+    # 🍲 鍋物蔬菜 (51個)
+    "🍲": "hotpot",    # 火鍋
+    "🥘": "hotpot",    # 燉鍋
+    "🥗": "hotpot",    # 沙拉
+    "🥬": "hotpot",    # 青菜
+    "🥒": "hotpot",    # 黃瓜
+    "🍄": "hotpot",    # 香菇
+    "🥕": "hotpot",    # 紅蘿蔔
+    "🧅": "hotpot",    # 洋蔥
+    "🥚": "hotpot",    # 蛋
+    "🍳": "hotpot",    # 煎蛋
+    "🧄": "hotpot",    # 蒜
+    # 🍰 甜點水果 (30個)
+    "🍰": "dessert",   # 蛋糕
+    "🎂": "dessert",   # 生日蛋糕
+    "🍦": "dessert",   # 冰淇淋
+    "🍩": "dessert",   # 甜甜圈
+    "🍪": "dessert",   # 餅乾
+    "🍫": "dessert",   # 巧克力
+    "🍬": "dessert",   # 糖果
+    "🍭": "dessert",   # 棒棒糖
+    "🍮": "dessert",   # 布丁
+    "🍉": "dessert",   # 西瓜
+    "🍇": "dessert",   # 葡萄
+    "🍈": "dessert",   # 哈密瓜
+    "🍊": "dessert",   # 橘子
+    "🍋": "dessert",   # 檸檬
+    "🍌": "dessert",   # 香蕉
+    "🍍": "dessert",   # 鳳梨
+    "🍎": "dessert",   # 蘋果
+    "🍓": "dessert",   # 草莓
+    "🍑": "dessert",   # 桃子
+}
+
+def random_food_by_category(category_id):
+    """根據分類 ID 隨機抽取一個食物項目"""
+    global food_categorized
+    if not food_categorized:
+        return None
+    
+    category_data = food_categorized.get(category_id)
+    if category_data and category_data.get("items"):
+        return random.choice(category_data["items"])
+    return None
+
+def get_food_category_info(category_id):
+    """取得食物分類的資訊"""
+    global food_categorized
+    if not food_categorized:
+        return None, None
+    
+    category_data = food_categorized.get(category_id)
+    if category_data:
+        return category_data.get("emoji", "🍽️"), category_data.get("name", "未知")
+    return None, None
 
 
 # 新增搜尋特定集數的功能
@@ -687,6 +791,22 @@ def random_video():
         return None
     return random.choice(video_data)
 
+def random_food():
+    global food_categorized
+    if not food_categorized:
+        return None
+    
+    # 從所有分類中收集所有食物
+    all_items = []
+    for category in food_categorized.values():
+        if "items" in category:
+            all_items.extend(category["items"])
+            
+    if not all_items:
+        return None
+        
+    return random.choice(all_items)
+
 
 def create_quick_reply(arg):
     if isinstance(arg, str):
@@ -712,34 +832,7 @@ def create_quick_reply(arg):
     items = [QuickReplyButton(action=MessageAction(label=label, text=text)) for label, text in buttons]
     return QuickReply(items=items)
 
-
-# def create_preview_flex_message(image_data):
-    # img_url = image_data.get("url", "")
-    # image_name = image_data.get("image_name", "")
-
-    # flex_content = {
-    #     "type": "bubble",
-    #     "hero": {
-    #         "type": "image",
-    #         "url": img_url,
-    #         "size": "full",
-    #         "aspectRatio": "16:9",
-    #         "aspectMode": "cover"
-    #     },
-    #     "footer": {
-    #         "type": "box",
-    #         "layout": "vertical",
-    #         "contents": [
-    #             {
-    #                 "type": "button",
-    #                 "action": {"type": "message", "label": "顯示資訊", "text": f"info:{image_name}"},
-    #                 "style": "primary"
-    #             }       
-    #         ]
-    #     }
-    # }
-
-    # return FlexSendMessage(alt_text="圖片預覽", contents=flex_content)
+ 
 
 def create_media_flex_message(media_data, media_type="image"):
     """通用建立媒體資訊 Flex Message 函數"""
@@ -800,6 +893,52 @@ def handle_message(event):
     message = event.message.text.strip()
     user_id = event.source.user_id
     logging.info(f"收到來自 {user_id} 的訊息: {message}")
+
+    if message == "吃" or message == "食物":
+        # 顯示6個食物分類 + 隨便抽選項
+        category_quick_reply = QuickReply(items=[
+            QuickReplyButton(action=MessageAction(label="🎲 隨便吃", text="隨便吃")),
+            QuickReplyButton(action=MessageAction(label="🍺 酒類/飲料", text="🍺")),
+            QuickReplyButton(action=MessageAction(label="🍣 海鮮/壽司", text="🍣")),
+            QuickReplyButton(action=MessageAction(label="🍚 主食", text="🍚")),
+            QuickReplyButton(action=MessageAction(label="🍖 肉類/燒烤", text="🍖")),
+            QuickReplyButton(action=MessageAction(label="🍲 鍋物/蔬菜", text="🍲")),
+            QuickReplyButton(action=MessageAction(label="🍰 甜點/水果", text="🍰")),
+            QuickReplyButton(action=MessageAction(label="選單", text="menu"))
+        ])
+        
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(
+                text="🍽️ 想吃什麼？選一個類別吧！",
+                quick_reply=category_quick_reply
+            )
+        )
+        return
+    
+    if message == "隨便吃":
+        # 從所有393個食物中隨機抽一個
+        food_item = random_food()
+        if food_item:
+            image_name = food_item.get('image_name', '')
+            quick_reply = create_quick_reply([
+                ("再抽一個", "隨便吃"),
+                ("選類別", "吃"),
+                ("集數資訊", f"info:{image_name}"),
+                ("選單", "menu")
+            ])
+            
+            line_bot_api.reply_message(
+                event.reply_token,
+                ImageSendMessage(
+                    original_content_url=food_item.get("url", ""),
+                    preview_image_url=food_item.get("url", ""),
+                    quick_reply=quick_reply
+                )
+            )
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text="找不到食物資料"))
+        return
  
 
 
@@ -891,8 +1030,8 @@ def handle_message(event):
 
         quick_reply = create_quick_reply([
             ("選單", "menu"),
-            ("抽圖片", "抽")
-            # ("抽影片", "抽影片")
+            ("抽圖片", "抽"),
+            ("🍽️ 吃", "吃")
         ])
 
         line_bot_api.reply_message(
@@ -924,32 +1063,7 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
         return
-    
-    # elif message == "抽影片":
-    #     random_v = random_video()
-    #     if random_v:
-    #         print(f"隨機抽取的影片: {random_v}")  # Debugging line
-    #         # 使用圖片編號創建適合的快速回覆按鈕
-    #         video_number = random_v['video_name']
-    #         quick_reply = create_quick_reply([
-    #             ("集數資訊", f"info:{video_number}"),
-    #             ("再抽一次", "抽"),
-    #             ("選單", "menu")
-    #         ]) 
-
-
-    #         line_bot_api.reply_message(
-    #             event.reply_token,
-    #             VideoSendMessage(
-    #                 original_content_url=random_v['url'],
-    #                 preview_image_url=vid_data.get('preview_url', vid_data['url']) ,# 假設預覽圖 URL
-    #                 quick_reply=quick_reply
-    #             )
-    #         )
-    #     else:
-    #         line_bot_api.reply_message(event.reply_token, TextSendMessage(text="無法抽取圖片，請確認數據已正確加載。"))
-    #     return
-    
+     
     elif message == "v": 
         # 顯示所有影片列表
         video_list = []
@@ -1133,7 +1247,8 @@ def handle_message(event):
                 ("下一張", next_img_num_str),
                 ("集數資訊", f"info:{normalized_message}"),
                 ("該集所有台詞", f"ep{img_data.get('episode', '未知')}"),
-                ("抽", "抽")
+                ("抽", "抽"),
+                ("選單", "menu")
             ])
             reply_messages.append(
                 ImageSendMessage(
@@ -1198,8 +1313,41 @@ def handle_message(event):
         )
         return
         
-    elif len(message) == 1:
-        if is_emoji(message[0]):
+    elif len(message) <= 2:  # emoji 可能是 1-2 個字元
+        # 先檢查是否為食物 emoji
+        if message in food_emoji_to_category:
+            category_id = food_emoji_to_category[message]
+            food_item = random_food_by_category(category_id)
+            
+            if food_item:
+                emoji, category_name = get_food_category_info(category_id)
+                image_name = food_item.get('image_name', '')
+                
+                # Quick Reply 讓使用者可以繼續抽同類或換類別
+                quick_reply = create_quick_reply([
+                    (f"再抽{category_name}", message),
+                    ("抽其他食物", "吃"),
+                    ("集數資訊", f"info:{image_name}"),
+                    ("選單", "menu")
+                ])
+                
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    ImageSendMessage(
+                        original_content_url=food_item.get("url", ""),
+                        preview_image_url=food_item.get("url", ""),
+                        quick_reply=quick_reply
+                    )
+                )
+            else:
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text=f"這個類別目前沒有資料喔！")
+                )
+            return
+        
+        # 原本的 emoji 處理邏輯
+        if len(message) == 1 and is_emoji(message[0]):
             # Handle emoji case
             unicode_str = f'U+{ord(message[0]):X}'
             if unicode_str in emoji_unicode_to_chinese:
@@ -1211,23 +1359,34 @@ def handle_message(event):
                     reply_message = "找不到符合的圖片名稱。"
             else:
                 reply_message = "我不認識這個表情符號！"
-        else:
-            # Handle regular character case
+                
+            quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(
+                    text=reply_message,
+                    quick_reply=quick_reply
+                )
+            )
+            return
+        
+        # Handle single character case
+        if len(message) == 1:
             search_result = search_by_keyword(message)
             if search_result:  
                 reply_message = "\n".join(search_result)
             else:
                 reply_message = "找不到符合的圖片名稱。"
-        
-        quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(
-                text=reply_message,
-                quick_reply=quick_reply
+            
+            quick_reply = create_quick_reply([("選單", "menu"), ("抽圖", "抽")])
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(
+                    text=reply_message,
+                    quick_reply=quick_reply
+                )
             )
-        )
-        return  
+            return  
    
     elif message.startswith("v"):
         print(f"🔍 搜尋影片關鍵字: {message[1:]}")  # Debugging line
@@ -1248,12 +1407,7 @@ def handle_message(event):
                 text=reply_message,
                 quick_reply=quick_reply
             )
-        )   
- 
-
-
-
-
+        )    
     else:
         search_result = search_by_keyword(message)
         if search_result:  
@@ -1272,6 +1426,7 @@ def handle_message(event):
         quick_reply = create_quick_reply([
             ("選單", "menu"),
             ("抽圖", "抽")
+            ("吃", "吃")
         ])
         
         line_bot_api.reply_message(
