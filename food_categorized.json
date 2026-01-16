@@ -1,0 +1,2795 @@
+{
+  "beer": {
+    "emoji": "🍺",
+    "name": "酒類飲料",
+    "count": 73,
+    "items": [
+      {
+        "image_name": "e00305",
+        "text": "那牛奶呢",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/7_0515.png",
+        "episode": "7",
+        "keyword": "牛奶"
+      },
+      {
+        "image_name": "e00907",
+        "text": "妳在喝熱咖啡啊",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/22_0705.png",
+        "episode": "22",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e01856",
+        "text": "我看先來個五箱汽水",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_0349.png",
+        "episode": "42",
+        "keyword": "汽水"
+      },
+      {
+        "image_name": "e01860",
+        "text": "外加水蜜桃果汁十箱乖乖十包",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_0356.png",
+        "episode": "42",
+        "keyword": "果汁"
+      },
+      {
+        "image_name": "e01914",
+        "text": "現在只剩下三合一的咖啡包了",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_1283.png",
+        "episode": "42",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e02626",
+        "text": "那來一瓶健身飲料吧",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/54_1079.png",
+        "episode": "54",
+        "keyword": "飲料"
+      },
+      {
+        "image_name": "e03166",
+        "text": "一杯啤酒,特大杯的",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1028.png",
+        "episode": "61",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e03461",
+        "text": "幹嘛,你也想喝啤酒嗎",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/66_0558.png",
+        "episode": "66",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e04375",
+        "text": "咖啡歐雷是充滿了藝術的味道",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/79_0202.png",
+        "episode": "79",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e04384",
+        "text": "這咖啡真棒",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/79_0595.png",
+        "episode": "79",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e04657",
+        "text": "我是啤酒王",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/82_0459.png",
+        "episode": "82",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e04705",
+        "text": "來,你的啤酒來了",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0244.png",
+        "episode": "83",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e06287",
+        "text": "到了補充營養飲料的時間了",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/110_0851.png",
+        "episode": "110",
+        "keyword": "飲料"
+      },
+      {
+        "image_name": "e06322",
+        "text": "淡咖啡要喝美國的",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/111_0877.png",
+        "episode": "111",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e06323",
+        "text": "濃咖啡就要喝非洲的了",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/111_0878.png",
+        "episode": "111",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e07209",
+        "text": "(咖啡)",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/130_0741.png",
+        "episode": "130",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e07357",
+        "text": "我去泡杯咖啡過來",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/132_0515.png",
+        "episode": "132",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e07611",
+        "text": "海上男兒的飲料",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/135_0311.png",
+        "episode": "135",
+        "keyword": "飲料"
+      },
+      {
+        "image_name": "e08270",
+        "text": "啤酒日本酒燒酒威士忌",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/145_0352.png",
+        "episode": "145",
+        "keyword": "威士忌"
+      },
+      {
+        "image_name": "e08283",
+        "text": "阿兩,那瓶牛奶過期了",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/145_0875.png",
+        "episode": "145",
+        "keyword": "牛奶"
+      },
+      {
+        "image_name": "e08498",
+        "text": "清酒兩津",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/149_1051.png",
+        "episode": "149",
+        "keyword": "清酒"
+      },
+      {
+        "image_name": "e08820",
+        "text": "我這裡有啤酒",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/154_0567.png",
+        "episode": "154",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e09218",
+        "text": "和咖啡會比較好一點",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/160_0593.png",
+        "episode": "160",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e09477",
+        "text": "泡完澡之後的啤酒最好喝了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0416.png",
+        "episode": "166",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e09479",
+        "text": "啤酒突然之間變得很難喝",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0452.png",
+        "episode": "166",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e09499",
+        "text": "好,請你給我兩杯最貴的藍山咖啡",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_1009.png",
+        "episode": "166",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e09500",
+        "text": "給我美式咖啡就好了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_1010.png",
+        "episode": "166",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e11929",
+        "text": "請問你喝威士忌可以嗎",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/202_1320.png",
+        "episode": "202",
+        "keyword": "威士忌"
+      },
+      {
+        "image_name": "e12478",
+        "text": "清酒蠢蛋一代",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/215_0569.png",
+        "episode": "215",
+        "keyword": "清酒"
+      },
+      {
+        "image_name": "e13317",
+        "text": "肉包,菜包小籠包,咖啡,紅茶",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/229_0562.png",
+        "episode": "229",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e13333",
+        "text": "要選有營養豐富的牛奶跟小魚干",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/229_0820.png",
+        "episode": "229",
+        "keyword": "牛奶"
+      },
+      {
+        "image_name": "e13335",
+        "text": "對了營養飲料",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/229_0960.png",
+        "episode": "229",
+        "keyword": "飲料"
+      },
+      {
+        "image_name": "e13474",
+        "text": "還有蕃茄醬打成的果汁",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_1093.png",
+        "episode": "231",
+        "keyword": "果汁"
+      },
+      {
+        "image_name": "e13488",
+        "text": "要不要來杯牛奶",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_1230.png",
+        "episode": "231",
+        "keyword": "牛奶"
+      },
+      {
+        "image_name": "e13496",
+        "text": "裝在黑色的杯子裡的咖啡",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_1304.png",
+        "episode": "231",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e13751",
+        "text": "你經常都喝這麼多啤酒嗎",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/237_0119.png",
+        "episode": "237",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e14639",
+        "text": "對了阿婆我要喝那個咖啡牛奶",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/253_0242.png",
+        "episode": "253",
+        "keyword": "牛奶"
+      },
+      {
+        "image_name": "e14641",
+        "text": "你說你在家泡麥茶跟咖啡也使用礦泉水",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/253_0277.png",
+        "episode": "253",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e14666",
+        "text": "啤酒,毛豆",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/253_0727.png",
+        "episode": "253",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e15102",
+        "text": "是啤酒",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0472.png",
+        "episode": "261",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e15121",
+        "text": "最後是啤酒一杯",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0751.png",
+        "episode": "261",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e15123",
+        "text": "啤酒喝太多",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0784.png",
+        "episode": "261",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e15437",
+        "text": "那罐裝咖啡呢",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/268_0496.png",
+        "episode": "268",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e16065",
+        "text": "飲料要熱一點",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/277_0538.png",
+        "episode": "277",
+        "keyword": "飲料"
+      },
+      {
+        "image_name": "e16231",
+        "text": "我想要喝一杯咖啡",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/281_0554.png",
+        "episode": "281",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e16232",
+        "text": "是香噴噴的咖啡",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/281_0558.png",
+        "episode": "281",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e16238",
+        "text": "好了,果汁",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/281_0582.png",
+        "episode": "281",
+        "keyword": "果汁"
+      },
+      {
+        "image_name": "e16828",
+        "text": "老闆,送個十杯啤酒過來",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/289_0872.png",
+        "episode": "289",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e16829",
+        "text": "老闆,我要可樂",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/289_0875.png",
+        "episode": "289",
+        "keyword": "可樂"
+      },
+      {
+        "image_name": "e17128",
+        "text": "老闆,啤酒",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/295_0347.png",
+        "episode": "295",
+        "keyword": "啤酒"
+      },
+      {
+        "image_name": "e17130",
+        "text": "老闆,兩壺清酒",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/295_0353.png",
+        "episode": "295",
+        "keyword": "清酒"
+      },
+      {
+        "image_name": "e19007",
+        "text": "先幫我泡杯熱咖啡可以嗎",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/343_1221.png",
+        "episode": "343",
+        "keyword": "咖啡"
+      },
+      {
+        "image_name": "e00705",
+        "text": "每次都會跑到我這來喝悶酒呢",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_1407.png",
+        "episode": "15",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e00709",
+        "text": "我今天要喝光這裡所有的酒",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_1439.png",
+        "episode": "15",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e00938",
+        "text": "應該就是一個人喝喝酒倒頭就睡吧",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/23_0161.png",
+        "episode": "23",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e03927",
+        "text": "是紅茶",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/71_1157.png",
+        "episode": "71",
+        "keyword": "茶"
+      },
+      {
+        "image_name": "e08401",
+        "text": "你也喜歡喝酒嗎",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/147_0979.png",
+        "episode": "147",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e08416",
+        "text": "不,我不太能喝酒",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/147_1255.png",
+        "episode": "147",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e08419",
+        "text": "您喝酒真豪爽",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/147_1269.png",
+        "episode": "147",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e08422",
+        "text": "雖然我愛喝酒可是我最討厭酒鬼了",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/147_1378.png",
+        "episode": "147",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e08734",
+        "text": "輸的人請喝酒",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/152_1120.png",
+        "episode": "152",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e09505",
+        "text": "喝酒兩萬塊",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_1141.png",
+        "episode": "166",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e11062",
+        "text": "大白天就開始喝酒",
+        "url": "https://github.com/tyj513/kochikame151to200_3/raw/master/190_0882.png",
+        "episode": "190",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e11931",
+        "text": "(阿兩喝酒)",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/202_1370.png",
+        "episode": "202",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e11932",
+        "text": "(阿兩喝酒)",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/202_1377.png",
+        "episode": "202",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e12805",
+        "text": "其實很不會喝酒",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/221_0413.png",
+        "episode": "221",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e12886",
+        "text": "我這個人真的很不會喝酒",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/222_0724.png",
+        "episode": "222",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e12962",
+        "text": "為什麼我,這些錢拿去喝茶",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/223_1305.png",
+        "episode": "223",
+        "keyword": "茶"
+      },
+      {
+        "image_name": "e13246",
+        "text": "大口大口的喝著好酒享受美食",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0293.png",
+        "episode": "228",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e16236",
+        "text": "還是喝紅茶好",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/281_0573.png",
+        "episode": "281",
+        "keyword": "茶"
+      },
+      {
+        "image_name": "e16926",
+        "text": "難得所長會願意陪我喝酒",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/290_1377.png",
+        "episode": "290",
+        "keyword": "酒"
+      },
+      {
+        "image_name": "e03607",
+        "text": "喝喝昆布茶",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/68_0791.png",
+        "episode": "68",
+        "keyword": "昆布"
+      },
+      {
+        "image_name": "e11920",
+        "text": "不用錢的酒真美味太好喝了",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/202_0458.png",
+        "episode": "202",
+        "keyword": ""
+      }
+    ]
+  },
+  "sushi": {
+    "emoji": "🍣",
+    "name": "海鮮壽司",
+    "count": 59,
+    "items": [
+      {
+        "image_name": "e00236",
+        "text": "還有爸爸媽媽喜歡的鮪魚花枝壽司",
+        "url": "https://github.com/tyj513/kochikame1to50_4_1/raw/main/5_0536.png",
+        "episode": "5",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00237",
+        "text": "以及小朋友最愛吃的蛋壽司",
+        "url": "https://github.com/tyj513/kochikame1to50_4_1/raw/main/5_0537.png",
+        "episode": "5",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00322",
+        "text": "還有壽司10人份",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/7_1347.png",
+        "episode": "7",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00526",
+        "text": "要吃什麼樣的壽司是我的自由",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_0953.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00537",
+        "text": "整條的河豚壽司",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1249.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00540",
+        "text": "鮭魚和魚卵的混合壽司",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1257.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00542",
+        "text": "黑鮪魚麻薯壽司",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1260.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00543",
+        "text": "章魚跳舞壽司怎麼樣",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1275.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e00545",
+        "text": "這是如假包換的章魚跳舞壽司",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1284.png",
+        "episode": "12",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e01157",
+        "text": "不就是幾片生魚片跟炸豬排嗎",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/29_0910.png",
+        "episode": "29",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e01859",
+        "text": "螃蟹罐頭牛肉罐頭各二十箱",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_0352.png",
+        "episode": "42",
+        "keyword": "螃蟹"
+      },
+      {
+        "image_name": "e02322",
+        "text": "我最喜歡吃壽司",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_1230.png",
+        "episode": "50",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e02945",
+        "text": "叫八人份的上等壽司來",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/58_1241.png",
+        "episode": "58",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e03153",
+        "text": "再來一盤大的生魚片",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1004.png",
+        "episode": "61",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e03156",
+        "text": "我也要再來兩大盤的生魚片",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1009.png",
+        "episode": "61",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e03160",
+        "text": "我還要烤竹莢魚跟一份炸鰈魚",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1016.png",
+        "episode": "61",
+        "keyword": "魚"
+      },
+      {
+        "image_name": "e03753",
+        "text": "給我叫三人份的特級壽司來",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/69_1022.png",
+        "episode": "69",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e04115",
+        "text": "生魚片還有炸蝦",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/74_1239.png",
+        "episode": "74",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e04116",
+        "text": "熱帶魚生魚乃和黑白炸蝦",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/74_1244.png",
+        "episode": "74",
+        "keyword": "炸蝦"
+      },
+      {
+        "image_name": "e04441",
+        "text": "大原老弟,我想吃鰻魚便當",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/80_0467.png",
+        "episode": "80",
+        "keyword": "鰻魚"
+      },
+      {
+        "image_name": "e04442",
+        "text": "我要吃上野伊豆榮的鰻魚便當",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/80_0475.png",
+        "episode": "80",
+        "keyword": "鰻魚"
+      },
+      {
+        "image_name": "e04733",
+        "text": "迴轉壽司和烤地瓜等等",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0633.png",
+        "episode": "83",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e06687",
+        "text": "烤魷魚乾來吃",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/123_0818.png",
+        "episode": "123",
+        "keyword": "魷魚"
+      },
+      {
+        "image_name": "e07188",
+        "text": "就是生魚片套餐",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/130_0408.png",
+        "episode": "130",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e07189",
+        "text": "明天的早餐是竹莢魚",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/130_0418.png",
+        "episode": "130",
+        "keyword": "魚"
+      },
+      {
+        "image_name": "e08857",
+        "text": "吃鰻魚,壽司",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/155_0129.png",
+        "episode": "155",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e09111",
+        "text": "給我十份上等的壽司馬上要",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/158_1150.png",
+        "episode": "158",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e11918",
+        "text": "太好了,壽司耶",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/202_0421.png",
+        "episode": "202",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e12014",
+        "text": "老闆再給我最高級的壽司十人份",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/204_0641.png",
+        "episode": "204",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e12031",
+        "text": "海星,鮑魚,魚蛋還有蝦子啦",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/204_1019.png",
+        "episode": "204",
+        "keyword": "蝦子"
+      },
+      {
+        "image_name": "e13059",
+        "text": "壽司蛋糕",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_0264.png",
+        "episode": "225",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e13118",
+        "text": "還有壽司吃到飽",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/226_0274.png",
+        "episode": "226",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e13131",
+        "text": "久等了上等壽司兩份來",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/226_0498.png",
+        "episode": "226",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e13132",
+        "text": "要上等壽司五份",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/226_0518.png",
+        "episode": "226",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e13239",
+        "text": "乾脆就請我吃河豚大餐好了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0221.png",
+        "episode": "228",
+        "keyword": "河豚"
+      },
+      {
+        "image_name": "e13240",
+        "text": "我要河豚生魚片",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0222.png",
+        "episode": "228",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e13241",
+        "text": "炸河豚,河豚火鍋前輩",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0225.png",
+        "episode": "228",
+        "keyword": "河豚"
+      },
+      {
+        "image_name": "e13276",
+        "text": "對了,順便帶點蒟蒻跟海鮮",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0609.png",
+        "episode": "228",
+        "keyword": "海鮮"
+      },
+      {
+        "image_name": "e13389",
+        "text": "我們要十人份的特級壽司快點",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/230_0461.png",
+        "episode": "230",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e13438",
+        "text": "這根本不是炸蝦",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_0125.png",
+        "episode": "231",
+        "keyword": "炸蝦"
+      },
+      {
+        "image_name": "e13932",
+        "text": "頂級壽司三百份",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/240_1428.png",
+        "episode": "240",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e14918",
+        "text": "再來是章魚",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/258_1063.png",
+        "episode": "258",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e15119",
+        "text": "烤雞肉還有生魚片",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0744.png",
+        "episode": "261",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e15515",
+        "text": "特級壽司十人份",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/269_0693.png",
+        "episode": "269",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e16152",
+        "text": "鱒魚壽司",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0365.png",
+        "episode": "279",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e16153",
+        "text": "我不喜歡吃用醋醃過的魚",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0379.png",
+        "episode": "279",
+        "keyword": "魚"
+      },
+      {
+        "image_name": "e16187",
+        "text": "是啊新菜色,西式壽司",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0995.png",
+        "episode": "279",
+        "keyword": "壽司"
+      },
+      {
+        "image_name": "e16578",
+        "text": "生魚片拼盤",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/286_1240.png",
+        "episode": "286",
+        "keyword": "生魚片"
+      },
+      {
+        "image_name": "e16757",
+        "text": "章魚料理啊",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/288_0181.png",
+        "episode": "288",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e16803",
+        "text": "醋漬章魚",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/288_1234.png",
+        "episode": "288",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e16804",
+        "text": "這道菜是炸章魚",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/288_1308.png",
+        "episode": "288",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e16805",
+        "text": "這道菜是碳烤章魚",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/288_1326.png",
+        "episode": "288",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e16806",
+        "text": "章魚甜點",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/288_1358.png",
+        "episode": "288",
+        "keyword": "章魚"
+      },
+      {
+        "image_name": "e17122",
+        "text": "烤鰻魚是嗎",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/295_0297.png",
+        "episode": "295",
+        "keyword": "鰻魚"
+      },
+      {
+        "image_name": "e17127",
+        "text": "老闆,再來兩份乾烤鰻魚",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/295_0329.png",
+        "episode": "295",
+        "keyword": "鰻魚"
+      },
+      {
+        "image_name": "e18569",
+        "text": "我想要吃鮪魚",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/326_0874.png",
+        "episode": "326",
+        "keyword": "鮪魚"
+      },
+      {
+        "image_name": "e18976",
+        "text": "就是說，這個龍蝦好好吃",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/342_0959.png",
+        "episode": "342",
+        "keyword": "龍蝦"
+      },
+      {
+        "image_name": "e19010",
+        "text": "還是多吃點小魚乾",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/344_0173.png",
+        "episode": "344",
+        "keyword": "魚"
+      }
+    ]
+  },
+  "rice": {
+    "emoji": "🍚",
+    "name": "主食",
+    "count": 113,
+    "items": [
+      {
+        "image_name": "e00065",
+        "text": "寺井，我要吃你的便當",
+        "url": "https://github.com/tyj513/kochikame101to150_2_1/raw/main/1_0669.png",
+        "episode": "1",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e00319",
+        "text": "炸蝦蓋飯10人份",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/7_1344.png",
+        "episode": "7",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e00461",
+        "text": "幫我叫一份叉燒麵還有水餃",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/11_0108.png",
+        "episode": "11",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e00544",
+        "text": "白飯上面還有活的章魚在跳舞",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/12_1283.png",
+        "episode": "12",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e09418",
+        "text": "歡迎光臨,要不要買份薯條",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/164_0538.png",
+        "episode": "164",
+        "keyword": "薯條"
+      },
+      {
+        "image_name": "e00659",
+        "text": "請問您今天要什麼便當呢",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_0210.png",
+        "episode": "15",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e01151",
+        "text": "味噌湯,茶泡飯法國的玉米清湯",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/29_0710.png",
+        "episode": "29",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e01522",
+        "text": "終於吃午飯了",
+        "url": "https://github.com/tyj513/kochikame1to50_2_1/raw/main/38_0105.png",
+        "episode": "38",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e01525",
+        "text": "我今天也是吃便當",
+        "url": "https://github.com/tyj513/kochikame1to50_2_1/raw/main/38_0117.png",
+        "episode": "38",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e01526",
+        "text": "這附近賣蕎麥麵跟大眾便當的",
+        "url": "https://github.com/tyj513/kochikame1to50_2_1/raw/main/38_0123.png",
+        "episode": "38",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e01612",
+        "text": "前輩你今天午餐要吃什麼",
+        "url": "https://github.com/tyj513/kochikame1to50_2_1/raw/main/39_0310.png",
+        "episode": "39",
+        "keyword": ""
+      },
+      {
+        "image_name": "e01613",
+        "text": "還是吃鶴龜軒的拉麵吧",
+        "url": "https://github.com/tyj513/kochikame1to50_2_1/raw/main/39_0312.png",
+        "episode": "39",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e01741",
+        "text": "有家法國料理不錯",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/40_0840.png",
+        "episode": "40",
+        "keyword": ""
+      },
+      {
+        "image_name": "e02268",
+        "text": "六樓是中華料理",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0102.png",
+        "episode": "50",
+        "keyword": ""
+      },
+      {
+        "image_name": "e02270",
+        "text": "四樓是法國料理",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0107.png",
+        "episode": "50",
+        "keyword": ""
+      },
+      {
+        "image_name": "e02271",
+        "text": "三樓是義大利料理",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0111.png",
+        "episode": "50",
+        "keyword": ""
+      },
+      {
+        "image_name": "e02272",
+        "text": "我們這家任君吃到飽餐廳",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0123.png",
+        "episode": "50",
+        "keyword": ""
+      },
+      {
+        "image_name": "e02273",
+        "text": "對啊每天吃飯都不曉得該吃什麼",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0135.png",
+        "episode": "50",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e02276",
+        "text": "然後是炒飯跟煎餃兩盤",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0495.png",
+        "episode": "50",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e02277",
+        "text": "五個特級的一口炸豬排飯",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0592.png",
+        "episode": "50",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03006",
+        "text": "有一家炒飯炒得很好吃的店",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/60_0268.png",
+        "episode": "60",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03164",
+        "text": "再來一份炒飯還有辣味島賊",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1024.png",
+        "episode": "61",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03403",
+        "text": "今天晚上要不要留下來一起吃頓飯",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/65_1039.png",
+        "episode": "65",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03491",
+        "text": "吃蕎麥麵了",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_0135.png",
+        "episode": "67",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e03493",
+        "text": "一我們大家一起來吃蕎麥麵吧",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_0153.png",
+        "episode": "67",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e03660",
+        "text": "要不要跟我一起去吃頓飯",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/68_1171.png",
+        "episode": "68",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03662",
+        "text": "我想吃法國料理可以嗎",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/68_1191.png",
+        "episode": "68",
+        "keyword": ""
+      },
+      {
+        "image_name": "e03724",
+        "text": "(豬排飯)",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/69_0262.png",
+        "episode": "69",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e03994",
+        "text": "那邊的牛奶還有麵包",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/72_1351.png",
+        "episode": "72",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e03999",
+        "text": "這個可以當做午餐吃的泡麵",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/72_1362.png",
+        "episode": "72",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e04318",
+        "text": "山頂的同志便當",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/78_0271.png",
+        "episode": "78",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e04319",
+        "text": "可是全國最好吃的火車便當",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/78_0318.png",
+        "episode": "78",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e04741",
+        "text": "火車便當",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0735.png",
+        "episode": "83",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e05033",
+        "text": "我要吃滷腐皮烏龍麵",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/87_0975.png",
+        "episode": "87",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e05692",
+        "text": "(梅子便當)",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/96_1073.png",
+        "episode": "96",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e05693",
+        "text": "這就是梅子便當",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/96_1076.png",
+        "episode": "96",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e05694",
+        "text": "今天呢來吃梅子飯吧",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/96_1096.png",
+        "episode": "96",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e06931",
+        "text": "叫個豬排飯來吃吧",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/127_0123.png",
+        "episode": "127",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e07090",
+        "text": "涼拌炒雞蛋",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1_2/raw/main/129_0411.png",
+        "episode": "129",
+        "keyword": ""
+      },
+      {
+        "image_name": "e07309",
+        "text": "(寺井的愛妻便當)",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/132_0128.png",
+        "episode": "132",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e07332",
+        "text": "拉麵,炒麵,豆皮鳥龍麵",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/132_0208.png",
+        "episode": "132",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e07367",
+        "text": "(阿兩的愛妻便當)",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/132_0574.png",
+        "episode": "132",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e07949",
+        "text": "拿去,是豬排飯",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/139_0311.png",
+        "episode": "139",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08320",
+        "text": "可以吃到免費的飯了",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/146_0304.png",
+        "episode": "146",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08591",
+        "text": "清炒白飯",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0446.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08593",
+        "text": "加味白飯",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0462.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08595",
+        "text": "拌新鮮白飯做成的米壽司",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0475.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08607",
+        "text": "中川的是炒飯白飯",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0575.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08608",
+        "text": "沒有配料的炒飯",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0577.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08609",
+        "text": "麗子的是健康的粥飯",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_0585.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08641",
+        "text": "德州漢堡獨家販售的成人飯糰",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_1094.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08655",
+        "text": "讓冷凍飯糰十秒鐘就能夠變成烤飯糰",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/151_1175.png",
+        "episode": "151",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e08966",
+        "text": "肚子又很餓的時候就叫炒飯裡白飯吧",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_0488.png",
+        "episode": "157",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e09229",
+        "text": "好大的漢堡",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/160_0652.png",
+        "episode": "160",
+        "keyword": "漢堡"
+      },
+      {
+        "image_name": "e09420",
+        "text": "奶昔跟起司漢堡各一份就行了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/164_0578.png",
+        "episode": "164",
+        "keyword": "漢堡"
+      },
+      {
+        "image_name": "e09474",
+        "text": "謝了...我吃泡麵就可以了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0288.png",
+        "episode": "166",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e09482",
+        "text": "就開始在吃泡麵呢",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0501.png",
+        "episode": "166",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e09494",
+        "text": "鰻魚飯套餐",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0905.png",
+        "episode": "166",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e09495",
+        "text": "我想要吃特大號的鰻魚飯套餐",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/166_0906.png",
+        "episode": "166",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e09753",
+        "text": "來,小鬼,這是給你的炒麵",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/169_0553.png",
+        "episode": "169",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e09755",
+        "text": "要不要吃便當啊",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/169_0557.png",
+        "episode": "169",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e10118",
+        "text": "能夠吃到特等的鰻魚飯",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/174_0628.png",
+        "episode": "174",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e10181",
+        "text": "裡面原來是中華炒麵",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/175_0706.png",
+        "episode": "175",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e10515",
+        "text": "就開始吃泡麵試試看",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/181_0184.png",
+        "episode": "181",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e10561",
+        "text": "你想吃拉麵",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/181_0937.png",
+        "episode": "181",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e10738",
+        "text": "只吃飯糰啊",
+        "url": "https://github.com/tyj513/kochikame151to200_3/raw/master/185_0974.png",
+        "episode": "185",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e12081",
+        "text": "是熱呼呼亭賣的便當",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/206_0570.png",
+        "episode": "206",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e12083",
+        "text": "妳這是松花堂買回來的便當",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/206_0660.png",
+        "episode": "206",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e12447",
+        "text": "我看我還是買每次吃的拉麵王吧",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/215_0122.png",
+        "episode": "215",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e12487",
+        "text": "好吃的咖哩",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/215_0847.png",
+        "episode": "215",
+        "keyword": "咖哩"
+      },
+      {
+        "image_name": "e12700",
+        "text": "我說湯頭比較清淡的東京拉麵比較美味",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/218_1101.png",
+        "episode": "218",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e12701",
+        "text": "拉麵當然得吃味噌湯頭的札幌拉麵嘛",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/218_1105.png",
+        "episode": "218",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e12704",
+        "text": "四碗拉麵加啤酒",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/218_1150.png",
+        "episode": "218",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e12790",
+        "text": "自助餐吃到飽",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/221_0137.png",
+        "episode": "221",
+        "keyword": ""
+      },
+      {
+        "image_name": "e12806",
+        "text": "蔬菜三明治一個是235元",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/221_0424.png",
+        "episode": "221",
+        "keyword": "三明治"
+      },
+      {
+        "image_name": "e12866",
+        "text": "那個石頭拌飯跟生牛肉拌飯",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/222_0282.png",
+        "episode": "222",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13111",
+        "text": "那就決定把豬排飯改成鰻魚飯好了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/226_0063.png",
+        "episode": "226",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13288",
+        "text": "這是最後的晚餐了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0924.png",
+        "episode": "228",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13437",
+        "text": "這不是炸蝦天婦羅蓋飯嗎",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_0115.png",
+        "episode": "231",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13444",
+        "text": "首先為您送上白飯",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_0268.png",
+        "episode": "231",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13750",
+        "text": "邊看漫畫邊吃便當",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/237_0116.png",
+        "episode": "237",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e13981",
+        "text": "這下子可以來一碗特大號的牛肉飯",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0406.png",
+        "episode": "242",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13985",
+        "text": "給我來一份特大牛肉飯加蛋",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0492.png",
+        "episode": "242",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e14028",
+        "text": "(阿兩吃蛋包飯)",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_1026.png",
+        "episode": "242",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e14415",
+        "text": "免費吃掉五十個水餃的活動回來嘛",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/249_0265.png",
+        "episode": "249",
+        "keyword": "水餃"
+      },
+      {
+        "image_name": "e14747",
+        "text": "晚餐是要吃吃到飽的自助餐",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_0936.png",
+        "episode": "255",
+        "keyword": ""
+      },
+      {
+        "image_name": "e14761",
+        "text": "你們就吃點白飯配燉菜吧",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_1130.png",
+        "episode": "255",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e14882",
+        "text": "肚子咕咕叫是吃飯的時間到了",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/258_0244.png",
+        "episode": "258",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e14883",
+        "text": "噹噹噹,我最喜歡吃便當",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/258_0247.png",
+        "episode": "258",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e14888",
+        "text": "好多好吃的便當好快樂",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/258_0316.png",
+        "episode": "258",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e15030",
+        "text": "每個人吃個小麵包",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/260_0659.png",
+        "episode": "260",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e15403",
+        "text": "中華料理全餐",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/267_1139.png",
+        "episode": "267",
+        "keyword": ""
+      },
+      {
+        "image_name": "e15517",
+        "text": "炒飯八份還有餃子十人份",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/269_0699.png",
+        "episode": "269",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e15530",
+        "text": "我要買便當,便當",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/269_1036.png",
+        "episode": "269",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e15796",
+        "text": "就是在豬排咖哩飯上面加顆生蛋",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/273_0865.png",
+        "episode": "273",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e15945",
+        "text": "納豆炒飯附湯套餐",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/275_0136.png",
+        "episode": "275",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e15977",
+        "text": "結果只買了個便當",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/275_0887.png",
+        "episode": "275",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e16029",
+        "text": "烤肉,鍋燒麵,咖哩飯,拉麵",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/276_0954.png",
+        "episode": "276",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e16136",
+        "text": "我品嚐美味的蕎麥麵",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/278_1425.png",
+        "episode": "278",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e16179",
+        "text": "我的豬排三明治嗎",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0860.png",
+        "episode": "279",
+        "keyword": "三明治"
+      },
+      {
+        "image_name": "e16189",
+        "text": "蔬菜三明治超讚",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_1163.png",
+        "episode": "279",
+        "keyword": "三明治"
+      },
+      {
+        "image_name": "e16590",
+        "text": "我晚餐吃了八人份的煎餃",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/287_0135.png",
+        "episode": "287",
+        "keyword": ""
+      },
+      {
+        "image_name": "e16864",
+        "text": "莫札特簡餐店的三明治",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/290_0466.png",
+        "episode": "290",
+        "keyword": "三明治"
+      },
+      {
+        "image_name": "e16885",
+        "text": "這便當看起來好好吃",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/290_0768.png",
+        "episode": "290",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e16953",
+        "text": "贏的人可以得到三個便當",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/291_0686.png",
+        "episode": "291",
+        "keyword": "便當"
+      },
+      {
+        "image_name": "e17095",
+        "text": "有沒有人要買三明治跟果汁",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/294_0740.png",
+        "episode": "294",
+        "keyword": "三明治"
+      },
+      {
+        "image_name": "e17423",
+        "text": "以及作曲家海鮮燴飯",
+        "url": "https://github.com/tyj513/kochikame251to300/raw/master/300_0595.png",
+        "episode": "300",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e17993",
+        "text": "我連一口早餐都還沒吃到呢",
+        "url": "https://github.com/tyj513/kochikame300to341/raw/master/316_0631.png",
+        "episode": "316",
+        "keyword": ""
+      },
+      {
+        "image_name": "e18565",
+        "text": "用咖哩炒飯製作的咖哩壽司",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/326_0711.png",
+        "episode": "326",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e18662",
+        "text": "龜有商店街龜鶴軒的拉麵定食有拉麵",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/328_1256.png",
+        "episode": "328",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e18914",
+        "text": "我最喜歡吃泡麵了",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/337_1065.png",
+        "episode": "337",
+        "keyword": "麵"
+      },
+      {
+        "image_name": "e18990",
+        "text": "只能靠地瓜粥",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/342_1307.png",
+        "episode": "342",
+        "keyword": "粥"
+      },
+      {
+        "image_name": "e19186",
+        "text": "還是吃蕎麥麵吧",
+        "url": "https://github.com/tyj513/kochikame101to150_2_1/raw/main/348_0621.png",
+        "episode": "348",
+        "keyword": "麵"
+      }
+    ]
+  },
+  "meat": {
+    "emoji": "🍖",
+    "name": "肉類燒烤",
+    "count": 65,
+    "items": [
+      {
+        "image_name": "e00321",
+        "text": "燒肉20人份",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/7_1346.png",
+        "episode": "7",
+        "keyword": "燒肉"
+      },
+      {
+        "image_name": "e00495",
+        "text": "我的牛排啦",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/11_1031.png",
+        "episode": "11",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e00498",
+        "text": "這是我最喜歡的烤雞肉",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/11_1148.png",
+        "episode": "11",
+        "keyword": "雞肉"
+      },
+      {
+        "image_name": "e00655",
+        "text": "雙人份的炸豬排套餐",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_0161.png",
+        "episode": "15",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e00656",
+        "text": "豬肉醬湯",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_0164.png",
+        "episode": "15",
+        "keyword": "豬肉"
+      },
+      {
+        "image_name": "e00660",
+        "text": "特大號的炸豬排和炸雞排便當各一份",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_0213.png",
+        "episode": "15",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e00747",
+        "text": "阿兩碳烤豬肉",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/16_1424.png",
+        "episode": "16",
+        "keyword": "豬肉"
+      },
+      {
+        "image_name": "e01014",
+        "text": "最愛吃神戶牛肉",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/26_0206.png",
+        "episode": "26",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e01082",
+        "text": "我可以再點一份牛排嗎",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/27_1282.png",
+        "episode": "27",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e01083",
+        "text": "服務生,再追加一份牛排",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/27_1284.png",
+        "episode": "27",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e01162",
+        "text": "這個炸豬排",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/29_0981.png",
+        "episode": "29",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e01748",
+        "text": "羅宋湯,法蘭克香腸",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/40_0900.png",
+        "episode": "40",
+        "keyword": "香腸"
+      },
+      {
+        "image_name": "e01858",
+        "text": "然後還要烤肉罐頭",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_0351.png",
+        "episode": "42",
+        "keyword": "烤肉"
+      },
+      {
+        "image_name": "e01901",
+        "text": "我要追加上等的牛肉跟牛小排",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_1060.png",
+        "episode": "42",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e02279",
+        "text": "真的變成一口份的炸豬排了",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0617.png",
+        "episode": "50",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e02281",
+        "text": "一口炸豬排特餐了",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_0635.png",
+        "episode": "50",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e02332",
+        "text": "接著是麻辣牛排",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_1279.png",
+        "episode": "50",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e03119",
+        "text": "我知道有一家燒烤店不錯",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_0683.png",
+        "episode": "61",
+        "keyword": "燒烤"
+      },
+      {
+        "image_name": "e03150",
+        "text": "還有烤雞肉串之外呢",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_0997.png",
+        "episode": "61",
+        "keyword": "雞肉"
+      },
+      {
+        "image_name": "e03152",
+        "text": "烤魚頭,雞胗烤肉各三串",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1001.png",
+        "episode": "61",
+        "keyword": "烤肉"
+      },
+      {
+        "image_name": "e03161",
+        "text": "串烤鳥賊跟肉丸子",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1018.png",
+        "episode": "61",
+        "keyword": "肉丸"
+      },
+      {
+        "image_name": "e03530",
+        "text": "豬肉火鍋",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_1222.png",
+        "episode": "67",
+        "keyword": "豬肉"
+      },
+      {
+        "image_name": "e03531",
+        "text": "這是有加了野山菜的豬肉火鍋",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_1244.png",
+        "episode": "67",
+        "keyword": "豬肉"
+      },
+      {
+        "image_name": "e03532",
+        "text": "肉還是比山菜好吃",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_1255.png",
+        "episode": "67",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e03533",
+        "text": "我這個人也最愛吃肉了",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_1261.png",
+        "episode": "67",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e04744",
+        "text": "我要來個烤雞肉串",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0892.png",
+        "episode": "83",
+        "keyword": "雞肉"
+      },
+      {
+        "image_name": "e04748",
+        "text": "目標,烤雞肉串一根",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0950.png",
+        "episode": "83",
+        "keyword": "雞肉"
+      },
+      {
+        "image_name": "e06993",
+        "text": "那邊的牛肉很好吃",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/127_1425.png",
+        "episode": "127",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e07201",
+        "text": "(牛排)",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/130_0693.png",
+        "episode": "130",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e08821",
+        "text": "我還要牛肉條",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/154_0570.png",
+        "episode": "154",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e09029",
+        "text": "還要松阪牛排",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_1027.png",
+        "episode": "157",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e09033",
+        "text": "鵝肝菜,魚子醬跟高級牛排",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_1189.png",
+        "episode": "157",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e09042",
+        "text": "那家的牛排真是太迷人了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_1389.png",
+        "episode": "157",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e09215",
+        "text": "準備可樂餅跟炸豬排可以嗎老公",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/160_0578.png",
+        "episode": "160",
+        "keyword": "炸豬排"
+      },
+      {
+        "image_name": "e09639",
+        "text": "燒烤吃到飽",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/168_0164.png",
+        "episode": "168",
+        "keyword": "燒烤"
+      },
+      {
+        "image_name": "e09737",
+        "text": "我要吃肉",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/168_1312.png",
+        "episode": "168",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e09743",
+        "text": "我要吃肉...燒肉",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/168_1430.png",
+        "episode": "168",
+        "keyword": "燒肉"
+      },
+      {
+        "image_name": "e10812",
+        "text": "今天晚上吃牛肉鍋",
+        "url": "https://github.com/tyj513/kochikame151to200_3/raw/master/186_0687.png",
+        "episode": "186",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e11983",
+        "text": "喜歡的東西是牛排",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/203_1125.png",
+        "episode": "203",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e11984",
+        "text": "吃燒肉要吃烤牛肉",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/203_1128.png",
+        "episode": "203",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e12977",
+        "text": "我就可以去吃烤肉了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/224_0243.png",
+        "episode": "224",
+        "keyword": "烤肉"
+      },
+      {
+        "image_name": "e13079",
+        "text": "準備了三十人份的烤嫩牛肉呢",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_0993.png",
+        "episode": "225",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e13665",
+        "text": "當然是燒肉了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/235_1013.png",
+        "episode": "235",
+        "keyword": "燒肉"
+      },
+      {
+        "image_name": "e14013",
+        "text": "這塊牛肉一定好吃",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0812.png",
+        "episode": "242",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e14084",
+        "text": "洋芋片,蟹肉罐頭",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/243_0557.png",
+        "episode": "243",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e14748",
+        "text": "燉菜肉吃到飽",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_0946.png",
+        "episode": "255",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e15046",
+        "text": "是魚肉香腸,一根",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/260_0884.png",
+        "episode": "260",
+        "keyword": "香腸"
+      },
+      {
+        "image_name": "e15095",
+        "text": "沒嚐過牛排的滋味",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0201.png",
+        "episode": "261",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e15114",
+        "text": "牛排我已經吃膩",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0724.png",
+        "episode": "261",
+        "keyword": "牛排"
+      },
+      {
+        "image_name": "e15382",
+        "text": "好比說請我吃一千人份的烤肉囉",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/267_0853.png",
+        "episode": "267",
+        "keyword": "烤肉"
+      },
+      {
+        "image_name": "e15401",
+        "text": "還要一千頭的松阪牛烤肉",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/267_1135.png",
+        "episode": "267",
+        "keyword": "烤肉"
+      },
+      {
+        "image_name": "e15981",
+        "text": "香腸是我的",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/275_0910.png",
+        "episode": "275",
+        "keyword": "香腸"
+      },
+      {
+        "image_name": "e15995",
+        "text": "所以準備了煮鴨肉火鍋",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/275_1372.png",
+        "episode": "275",
+        "keyword": "鴨肉"
+      },
+      {
+        "image_name": "e18978",
+        "text": "我要烤的是霜降牛肉排",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/342_0996.png",
+        "episode": "342",
+        "keyword": "牛肉"
+      },
+      {
+        "image_name": "e02769",
+        "text": "這個小羊熏烤真的好好吃",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/56_0479.png",
+        "episode": "56",
+        "keyword": "肉"
+      },
+      {
+        "image_name": "e09028",
+        "text": "牛肉飯,不對,是牛排",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_1025.png",
+        "episode": "157",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e10891",
+        "text": "以及涼拌紅酒鮮蔬加上嫩牛肉",
+        "url": "https://github.com/tyj513/kochikame151to200_3/raw/master/187_1059.png",
+        "episode": "187",
+        "keyword": "紅酒"
+      },
+      {
+        "image_name": "e03217",
+        "text": "炸鯨排",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/62_0984.png",
+        "episode": "62",
+        "keyword": ""
+      },
+      {
+        "image_name": "e00657",
+        "text": "那給我炸雞排好了",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/15_0176.png",
+        "episode": "15",
+        "keyword": "炸雞"
+      },
+      {
+        "image_name": "e02037",
+        "text": "涼拌炒雞蛋",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/44_1154.png",
+        "episode": "44",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13990",
+        "text": "豬排是剛剛炸好的",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0663.png",
+        "episode": "242",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13991",
+        "text": "今天的豬排怎麼這麼薄呢",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0670.png",
+        "episode": "242",
+        "keyword": ""
+      },
+      {
+        "image_name": "e14000",
+        "text": "終於可以好好享用豬排大餐了",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0713.png",
+        "episode": "242",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13539",
+        "text": "怎麼辦,涼拌炒雞蛋",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/232_1001.png",
+        "episode": "232",
+        "keyword": ""
+      }
+    ]
+  },
+  "hotpot": {
+    "emoji": "🍲",
+    "name": "鍋物蔬菜",
+    "count": 35,
+    "items": [
+      {
+        "image_name": "e00462",
+        "text": "我要多叫一份青菜炒豬肝",
+        "url": "https://github.com/tyj513/kochikame1to50/raw/master/11_0109.png",
+        "episode": "11",
+        "keyword": "青菜"
+      },
+      {
+        "image_name": "e02316",
+        "text": "(青菜汁)",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_1186.png",
+        "episode": "50",
+        "keyword": "青菜"
+      },
+      {
+        "image_name": "e02318",
+        "text": "這是現在最流行的青菜汁",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/50_1213.png",
+        "episode": "50",
+        "keyword": "青菜"
+      },
+      {
+        "image_name": "e03159",
+        "text": "還有石頭火鍋,涼拌豆腐",
+        "url": "https://github.com/tyj513/kochikame51to100_4_1/raw/main/61_1014.png",
+        "episode": "61",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e03534",
+        "text": "你老人家多吃蔬菜嘛",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/67_1264.png",
+        "episode": "67",
+        "keyword": "蔬菜"
+      },
+      {
+        "image_name": "e04119",
+        "text": "加大量南國水果風味的夏威夷特產熱帶火鍋",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/74_1267.png",
+        "episode": "74",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e04732",
+        "text": "烤雞肉串,壽喜燒,章魚燒",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0632.png",
+        "episode": "83",
+        "keyword": "壽喜燒"
+      },
+      {
+        "image_name": "e05463",
+        "text": "這是剛煮好的玉米",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/93_0708.png",
+        "episode": "93",
+        "keyword": "玉米"
+      },
+      {
+        "image_name": "e05890",
+        "text": "是很愛吃水煮蛋的人了",
+        "url": "https://github.com/tyj513/kochikame51to100_4/raw/master/99_0177.png",
+        "episode": "99",
+        "keyword": "煮"
+      },
+      {
+        "image_name": "e07150",
+        "text": "(寺井吃玉米)",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1_2/raw/main/129_1430.png",
+        "episode": "129",
+        "keyword": "玉米"
+      },
+      {
+        "image_name": "e10799",
+        "text": "還有紅蘿蔔,洋蔥,還有",
+        "url": "https://github.com/tyj513/kochikame151to200_3/raw/master/186_0606.png",
+        "episode": "186",
+        "keyword": "蘿蔔"
+      },
+      {
+        "image_name": "e12117",
+        "text": "這種時候只要吃點菠菜",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/207_0889.png",
+        "episode": "207",
+        "keyword": "菠菜"
+      },
+      {
+        "image_name": "e12149",
+        "text": "有送健康按摩機跟香菇紅茶",
+        "url": "https://github.com/tyj513//kochikame201to250/raw/master/208_0414.png",
+        "episode": "208",
+        "keyword": "香菇"
+      },
+      {
+        "image_name": "e13264",
+        "text": "天氣冷吃火鍋最棒了",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0550.png",
+        "episode": "228",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e13271",
+        "text": "要是讓他多吃一點蔬菜的話",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0595.png",
+        "episode": "228",
+        "keyword": "蔬菜"
+      },
+      {
+        "image_name": "e13302",
+        "text": "人生就是要吃火鍋",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_1240.png",
+        "episode": "228",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e13329",
+        "text": "你不多吃點蔬菜不行",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/229_0807.png",
+        "episode": "229",
+        "keyword": "蔬菜"
+      },
+      {
+        "image_name": "e13447",
+        "text": "再來是玉米濃湯",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_0293.png",
+        "episode": "231",
+        "keyword": "玉米"
+      },
+      {
+        "image_name": "e19436",
+        "text": "沒有讓你吃到鯛魚燒的話",
+        "url": "https://github.com/tyj513/kochikame101to150_2_1/raw/main/353_0853.png",
+        "episode": "353",
+        "keyword": "鯛魚"
+      },
+      {
+        "image_name": "e13457",
+        "text": "只吃蔬菜跟水果怎麼可能會飽",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_0377.png",
+        "episode": "231",
+        "keyword": "蔬菜"
+      },
+      {
+        "image_name": "e13789",
+        "text": "(野鴨火鍋)",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/237_1126.png",
+        "episode": "237",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e14016",
+        "text": "你看不出來嗎,煮個火鍋吃",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0904.png",
+        "episode": "242",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e14018",
+        "text": "火鍋我喜歡,l LIKE",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0925.png",
+        "episode": "242",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e14362",
+        "text": "怎麼會有那麼多水煮蛋",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/248_0820.png",
+        "episode": "248",
+        "keyword": "煮"
+      },
+      {
+        "image_name": "e14756",
+        "text": "和吃恐怖火鍋沒兩樣",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_1010.png",
+        "episode": "255",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e15117",
+        "text": "涼拌豆腐好好吃",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/261_0738.png",
+        "episode": "261",
+        "keyword": "豆腐"
+      },
+      {
+        "image_name": "e15994",
+        "text": "那就順便留下來一起吃火鍋吧",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/275_1366.png",
+        "episode": "275",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e16006",
+        "text": "開一場火鍋派對吧",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/276_0375.png",
+        "episode": "276",
+        "keyword": "火鍋"
+      },
+      {
+        "image_name": "e16183",
+        "text": "木棉豆腐,很好吃哦",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0967.png",
+        "episode": "279",
+        "keyword": "豆腐"
+      },
+      {
+        "image_name": "e16470",
+        "text": "學長,我煮了蛤蜊味噌湯",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/285_0508.png",
+        "episode": "285",
+        "keyword": "味噌湯"
+      },
+      {
+        "image_name": "e19267",
+        "text": "這是獎品高麗菜",
+        "url": "https://github.com/tyj513/kochikame101to150_2_1/raw/main/350_0644.png",
+        "episode": "350",
+        "keyword": "高麗菜"
+      },
+      {
+        "image_name": "e05532",
+        "text": "我吃了韭菜炒蛋",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/94_0620.png",
+        "episode": "94",
+        "keyword": ""
+      },
+      {
+        "image_name": "e08986",
+        "text": "就能夠繁殖出來吃不完的豆芽菜了",
+        "url": "https://github.com/tyj513/kochikame151to200_4_1/raw/main/157_0641.png",
+        "episode": "157",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13274",
+        "text": "要白菜還有冬粉",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0604.png",
+        "episode": "228",
+        "keyword": "冬粉"
+      },
+      {
+        "image_name": "e13275",
+        "text": "還有青蔥之類的",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/228_0606.png",
+        "episode": "228",
+        "keyword": ""
+      },
+      {
+        "image_name": "e16154",
+        "text": "還有,我也不喜歡吃羊栖菜",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/279_0386.png",
+        "episode": "279",
+        "keyword": ""
+      }
+    ]
+  },
+  "dessert": {
+    "emoji": "🍰",
+    "name": "甜點水果",
+    "count": 48,
+    "items": [
+      {
+        "image_name": "e01857",
+        "text": "鹽跟十箱的餅乾跟乾糧",
+        "url": "https://github.com/tyj513/kochikame1to50_2/raw/master/42_0350.png",
+        "episode": "42",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e03668",
+        "text": "這可是我親手做的餅乾",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/68_1251.png",
+        "episode": "68",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e03725",
+        "text": "抹茶口味的冰淇淋",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/69_0290.png",
+        "episode": "69",
+        "keyword": "冰淇淋"
+      },
+      {
+        "image_name": "e04462",
+        "text": "我還寧願買個高級的哈密瓜來吃",
+        "url": "https://github.com/tyj513/kochikame51to100_2_1/raw/main/80_0763.png",
+        "episode": "80",
+        "keyword": "哈密瓜"
+      },
+      {
+        "image_name": "e04726",
+        "text": "準備的蛋糕吃到飽",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/83_0486.png",
+        "episode": "83",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e05696",
+        "text": "這塊蛋糕幾乎全部都是梅子",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/96_1138.png",
+        "episode": "96",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e06061",
+        "text": "一顆糖果",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1/raw/main/101_1011.png",
+        "episode": "101",
+        "keyword": "糖果"
+      },
+      {
+        "image_name": "e07063",
+        "text": "難得我買了蛋糕來",
+        "url": "https://github.com/tyj513/kochikame101to150_4_1_2/raw/main/128_1184.png",
+        "episode": "128",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e07738",
+        "text": "我買了冰淇淋回來了",
+        "url": "https://github.com/tyj513/kochikame101to150_2/raw/master/137_0122.png",
+        "episode": "137",
+        "keyword": "冰淇淋"
+      },
+      {
+        "image_name": "e08285",
+        "text": "是餅乾",
+        "url": "https://github.com/tyj513/kochikame101to150_3/raw/master/145_0891.png",
+        "episode": "145",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e10019",
+        "text": "請大家來買我們親手做的蛋糕",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/173_0973.png",
+        "episode": "173",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e10020",
+        "text": "這是迷你巡邏車蛋糕",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/173_0976.png",
+        "episode": "173",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e10023",
+        "text": "來買個蛋糕嘛",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/173_0983.png",
+        "episode": "173",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e10548",
+        "text": "我買了一包含稅210元的餅乾回來",
+        "url": "https://github.com/tyj513/kochikame151to200_2/raw/master/181_0555.png",
+        "episode": "181",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e11335",
+        "text": "那是一顆辛辣無比的糖果",
+        "url": "https://github.com/tyj513/kochikame101to150_2_1/raw/main/195_1301.png",
+        "episode": "195",
+        "keyword": "糖果"
+      },
+      {
+        "image_name": "e13049",
+        "text": "和風蛋糕",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_0233.png",
+        "episode": "225",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e13087",
+        "text": "得跟小螞蟻一樣在吃蛋糕",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_1150.png",
+        "episode": "225",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e13350",
+        "text": "光吃這些有的沒的零食嗎",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/229_1299.png",
+        "episode": "229",
+        "keyword": "零食"
+      },
+      {
+        "image_name": "e13473",
+        "text": "請不要客氣;這是草莓櫻桃",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/231_1091.png",
+        "episode": "231",
+        "keyword": "草莓"
+      },
+      {
+        "image_name": "e13978",
+        "text": "狗狗,要不要吃餅乾",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_0372.png",
+        "episode": "242",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e14034",
+        "text": "可惡,居然敢吃我的蛋糕",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/242_1260.png",
+        "episode": "242",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e14164",
+        "text": "哥哥買了妳最愛吃的煎餅回給妳了",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/244_0506.png",
+        "episode": "244",
+        "keyword": "餅"
+      },
+      {
+        "image_name": "e14165",
+        "text": "種冰淇淋妳一定很喜歡吧",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/244_0510.png",
+        "episode": "244",
+        "keyword": "冰淇淋"
+      },
+      {
+        "image_name": "e14459",
+        "text": "我就可以一天三餐全部都吃西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0298.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14460",
+        "text": "我真的可以早醒過來就吃西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0303.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14476",
+        "text": "你們看這是白底紅點點的西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0532.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14477",
+        "text": "這一顆是謝謝光臨世界盃的足球紀念西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0537.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14480",
+        "text": "這些是刻上字的八犬傳西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0544.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14481",
+        "text": "骰子造型的西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0550.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14482",
+        "text": "太空西瓜加上",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0552.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e05778",
+        "text": "(阿兩吃可樂餅)",
+        "url": "https://github.com/tyj513/kochikame51to100_3/raw/master/97_1096.png",
+        "episode": "97",
+        "keyword": "可樂"
+      },
+      {
+        "image_name": "e14483",
+        "text": "像香瓜的西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0553.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14484",
+        "text": "三色丸子西瓜",
+        "url": "https://github.com/tyj513/kochikame201to250_5/raw/main/250_0557.png",
+        "episode": "250",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e14751",
+        "text": "是餅乾",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_0991.png",
+        "episode": "255",
+        "keyword": "餅乾"
+      },
+      {
+        "image_name": "e14754",
+        "text": "我的是剛才在出口街買的香蕉",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1/raw/main/255_0997.png",
+        "episode": "255",
+        "keyword": "香蕉"
+      },
+      {
+        "image_name": "e16030",
+        "text": "這不是巧克力嗎",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/276_0981.png",
+        "episode": "276",
+        "keyword": "巧克力"
+      },
+      {
+        "image_name": "e16463",
+        "text": "請用,麗子特製的水果蛋糕",
+        "url": "https://github.com/tyj513/kochikame251to300_2_1_2/raw/main/285_0418.png",
+        "episode": "285",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e18465",
+        "text": "(阿兩做的蛋糕)",
+        "url": "https://github.com/tyj513/kochikame300to341/raw/master/322_0707.png",
+        "episode": "322",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e18466",
+        "text": "(阿兩做的蛋糕)",
+        "url": "https://github.com/tyj513/kochikame300to341/raw/master/322_0732.png",
+        "episode": "322",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e18467",
+        "text": "(阿兩做的蛋糕)",
+        "url": "https://github.com/tyj513/kochikame300to341/raw/master/322_0733.png",
+        "episode": "322",
+        "keyword": "蛋糕"
+      },
+      {
+        "image_name": "e18764",
+        "text": "一顆要價五百元的草莓女王",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/332_1117.png",
+        "episode": "332",
+        "keyword": "草莓"
+      },
+      {
+        "image_name": "e18767",
+        "text": "這就是彩虹西瓜",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/332_1232.png",
+        "episode": "332",
+        "keyword": "西瓜"
+      },
+      {
+        "image_name": "e19011",
+        "text": "糖果",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/344_0205.png",
+        "episode": "344",
+        "keyword": "糖果"
+      },
+      {
+        "image_name": "e19116",
+        "text": "徹底保住布丁",
+        "url": "https://github.com/tyj513/kochikame300to341_2_1/raw/main/347_0480.png",
+        "episode": "347",
+        "keyword": "布丁"
+      },
+      {
+        "image_name": "e03726",
+        "text": "飯後甜點當然一定要吃抹茶冰淇淋了",
+        "url": "https://github.com/tyj513/kochikame51to100_2/raw/master/69_0294.png",
+        "episode": "69",
+        "keyword": "飯"
+      },
+      {
+        "image_name": "e13752",
+        "text": "邊看電視一邊吃米果",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/237_0126.png",
+        "episode": "237",
+        "keyword": ""
+      },
+      {
+        "image_name": "e13055",
+        "text": "下一個是這個咖哩蛋糕",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_0249.png",
+        "episode": "225",
+        "keyword": "咖哩"
+      },
+      {
+        "image_name": "e13057",
+        "text": "這個蛋糕的賣點就是可以吃到咖哩",
+        "url": "https://github.com/tyj513/kochikame201to250_2_1/raw/main/225_0258.png",
+        "episode": "225",
+        "keyword": "咖哩"
+      },
+      {
+        "image_name": "e18992",
+        "text": "跑到田裡去偷地瓜吃",
+        "url": "https://github.com/tyj513/kochikame300to341_2/raw/master/342_1323.png",
+        "episode": "342",
+        "keyword": ""
+      }
+    ]
+  }
+}
