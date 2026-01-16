@@ -1052,18 +1052,18 @@ def handle_message(event):
                  
                 輸入「ep數字」查看該集內容（例：ep202） 
                 輸入「吃」抽選食物
-                """
-            quick_reply = create_quick_reply([
-                ("選單", "menu"),
-                ("抽圖片", "抽"),
-                ("🍽️ 吃", "吃")
-            ])
-    
-            line_bot_api.reply_message(
-                event.reply_token, 
-                TextSendMessage(text=reply_message, quick_reply=quick_reply)
-            )
-            return
+                """ 
+        quick_reply = create_quick_reply([
+            ("選單", "menu"),
+            ("抽圖片", "抽"),
+            ("🍽️ 吃", "吃")
+        ])
+            
+        line_bot_api.reply_message(
+            event.reply_token, 
+            TextSendMessage(text=reply_message, quick_reply=quick_reply)
+        )
+        return
 
 
     elif message == "抽":
