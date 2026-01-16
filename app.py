@@ -1049,6 +1049,7 @@ def handle_message(event):
                 ("集數資訊", f"info:{image_number}"),
                 ("再抽一次", "抽"),
                 ("該集數的台詞", f"ep:{random_img['episode']}"),
+                 ("🍽️ 吃", "吃"),
                 ("選單", "menu")
             ])
             
